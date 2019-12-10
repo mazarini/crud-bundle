@@ -5,8 +5,8 @@
 		<nav>
 			<ul class="pagination justify-content-center">
 				{% if data.pagination.lastPage > 5 %}
-					{% include 'pagination/first.html.twig' with {'link': data.links.first} only %}
-					{% include 'pagination/prev.html.twig' with {'link': data.links.previous} only %}
+					{% include '@MazariniCrud/pagination/first.html.twig' with {'link': data.links.first} only %}
+					{% include '@MazariniCrud/pagination/prev.html.twig' with {'link': data.links.previous} only %}
 					{% set start_n = data.pagination.currentPage %}
 					{% set end_n = data.pagination.currentPage %}
 				{% else %}
@@ -15,16 +15,16 @@
 				{% endif %}
 				{% for number in start_n..end_n %}
 					{% if data.pagination.currentPage == number %}
-						{% include 'pagination/item.html.twig' with {'link': data.links['page-' ~ number], number: number} only %}
+						{% include '@MazariniCrud/pagination/item.html.twig' with {'link': data.links['page-' ~ number], number: number} only %}
 					{% else %}
 						{% block number %}
-							{% include 'pagination/item.html.twig' with {'link': data.links['page-' ~ number], number: number} only %}
+							{% include '@MazariniCrud/pagination/item.html.twig' with {'link': data.links['page-' ~ number], number: number} only %}
 						{% endblock number %}
 					{% endif %}
 				{% endfor %}
 				{% if data.pagination.lastPage > 5 %}
-					{% include 'pagination/next.html.twig' with {'link': data.links.next} only %}
-					{% include 'pagination/last.html.twig' with {'link': data.links.last} only %}
+					{% include '@MazariniCrud/pagination/next.html.twig' with {'link': data.links.next} only %}
+					{% include '@MazariniCrud/pagination/last.html.twig' with {'link': data.links.last} only %}
 				{% endif %}
 			</ul>
 		</nav>

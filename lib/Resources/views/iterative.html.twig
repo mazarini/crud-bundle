@@ -1,9 +1,0 @@
-{% block iterative_container %}
-    {% block header_container %}{% endblock header_container %}
-    {% for key, item in items %}
-        {% block item_container %}{% endblock item_container %}
-    {% else %}
-        {% block empty_container %}{% endblock empty_container %}
-    {% endfor %}
-    {% block footer_container %}{% endblock footer_container %}
-{% endblock iterative_container %}

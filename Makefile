@@ -19,8 +19,10 @@ composer:
 	composer -vv validate --strict
 
 twig:
-	bin/console lint:twig templates/ 
+	bin/console lint:twig templates/ lib/Resources/config
 	twigcs templates -vv
+	twigcs lib/Resources/config -vv
+ 
 
 yaml:
 	bin/console lint:yaml config lib/Resources/config phpstan.neon.dist .travis.yml

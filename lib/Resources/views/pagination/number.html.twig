@@ -6,10 +6,10 @@
 			<ul class="pagination justify-content-center">
 				{% for number in 1..data.pagination.lastPage %}
 					{% if data.pagination.currentPage == number %}
-						{% include 'pagination/item.html.twig' with {'link': data.links['page_' ~ number], 'number': number} only %}
+						{% include '@MazariniCrud/pagination/item.html.twig' with {'link': data.links['page_' ~ number], 'number': number} only %}
 					{% else %}
 						{% block number %}
-							{% include 'pagination/item.html.twig' with {'link': data.links['page_' ~ number], 'number': number} only %}
+							{% include '@MazariniCrud/pagination/item.html.twig' with {'link': data.links['page_' ~ number], 'number': number} only %}
 						{% endblock number %}
 					{% endif %}
 				{% endfor %}
