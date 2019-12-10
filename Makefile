@@ -23,14 +23,14 @@ twig:
 	twigcs templates -vv
 
 yaml:
-	bin/console lint:yaml config phpstan.neon.dist .travis.yml
+	bin/console lint:yaml config lib/Resources/config phpstan.neon.dist .travis.yml
 
 cs:
 	php-cs-fixer fix
 
 stan:
 	if [ ! -d "var/cache/phpunit" ]; then vendor/bin/simple-phpunit install -v; fi
-	phpstan analyse src tests --level max
+	phpstan analyse lib src tests --level max
 
 validate: security composer twig yaml stan cs
 

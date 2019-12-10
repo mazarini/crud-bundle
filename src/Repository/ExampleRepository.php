@@ -21,6 +21,7 @@ namespace App\Repository;
 
 use App\Entity\Example;
 use Doctrine\Common\Persistence\ManagerRegistry;
+use Mazarini\CrudBundle\Repository\AbstractRepository;
 
 /**
  * @method Example|null find($id, $lockMode = null, $lockVersion = null)

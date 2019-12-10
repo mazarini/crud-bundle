@@ -22,6 +22,7 @@ namespace App\Controller;
 use App\Entity\Five;
 use App\Form\FiveType;
 use App\Repository\FiveRepository;
+use Mazarini\CrudBundle\Controller\AbstractCrudController;
 use Mazarini\ToolsBundle\Entity\EntityInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;

@@ -17,21 +17,26 @@
  * You should have received a copy of the GNU General Public License
  */
 
-namespace App\Repository;
+namespace Mazarini\CrudBundle\DependencyInjection;
 
-use App\Entity\User;
-use Doctrine\Common\Persistence\ManagerRegistry;
-use Mazarini\CrudBundle\Repository\AbstractRepository;
+use Symfony\Component\Config\FileLocator;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Extension\Extension;
+use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 
-/**
- * @method User|null find($id, $lockMode = null, $lockVersion = null)
- * @method User|null findOneBy(array $criteria, array $orderBy = null)
- * @method User[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
- */
-class UserRepository extends AbstractRepository
+class MazariniCrudExtension extends Extension
 {
-    public function __construct(ManagerRegistry $registry)
+    /**
+     * load.
+     *
+     * @param array<int,mixed> $configs
+     */
+    public function load(array $configs, ContainerBuilder $container): void
     {
-        parent::__construct($registry, User::class);
+        $loader = new YamlFileLoader(
+            $container,
+            new FileLocator(__DIR__.'/../Resources/config')
+        );
+        $loader->load('services.yaml');
     }
 }

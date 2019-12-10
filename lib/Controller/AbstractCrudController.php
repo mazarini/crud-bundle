@@ -17,9 +17,9 @@
  * You should have received a copy of the GNU General Public License
  */
 
-namespace App\Controller;
+namespace Mazarini\CrudBundle\Controller;
 
-use App\Tool\Data;
+use Mazarini\CrudBundle\Tool\Data;
 use Mazarini\ToolsBundle\Entity\EntityInterface;
 use Symfony\Component\Form\Form;
 use Symfony\Component\HttpFoundation\Request;

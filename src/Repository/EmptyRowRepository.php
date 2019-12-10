@@ -21,6 +21,7 @@ namespace App\Repository;
 
 use App\Entity\EmptyRow;
 use Doctrine\Common\Persistence\ManagerRegistry;
+use Mazarini\CrudBundle\Repository\AbstractRepository;
 
 /**
  * @method EmptyRow|null find($id, $lockMode = null, $lockVersion = null)

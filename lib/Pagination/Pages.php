@@ -17,7 +17,7 @@
  * You should have received a copy of the GNU General Public License
  */
 
-namespace App\Pagination;
+namespace Mazarini\CrudBundle\Pagination;
 
 class Pages extends Entities
 {

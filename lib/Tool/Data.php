@@ -17,9 +17,9 @@
  * You should have received a copy of the GNU General Public License
  */
 
-namespace App\Tool;
+namespace Mazarini\CrudBundle\Tool;
 
-use App\Pagination\Pagination;
+use Mazarini\CrudBundle\Pagination\Pagination;
 use Mazarini\ToolsBundle\Entity\EntityInterface;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 

@@ -17,10 +17,10 @@
  * You should have received a copy of the GNU General Public License
  */
 
-namespace App\Controller;
+namespace Mazarini\CrudBundle\Controller;
 
-use App\Repository\AbstractRepository;
-use App\Tool\Data;
+use Mazarini\CrudBundle\Repository\AbstractRepository;
+use Mazarini\CrudBundle\Tool\Data;
 use Mazarini\ToolsBundle\Entity\EntityInterface;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Response;

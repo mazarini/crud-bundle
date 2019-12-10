@@ -17,34 +17,13 @@
  * You should have received a copy of the GNU General Public License
  */
 
-namespace App\Pagination;
+namespace Mazarini\CrudBundle;
 
-use Mazarini\ToolsBundle\Entity\EntityInterface;
+use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-interface PaginationInterface
+/**
+ * @author Mazarini <mazarini@protonmail.com>
+ */
+class MazariniCrudBundle extends Bundle
 {
-    /**
-     * getEntities.
-     *
-     * @return \ArrayIterator<int,EntityInterface>
-     */
-    public function getEntities(): \ArrayIterator;
-
-    public function hasToPaginate(): bool;
-
-    public function hasPreviousPage(): bool;
-
-    public function getFirstPage(): int;
-
-    public function getPreviousPage(): int;
-
-    public function getCurrentPage(): int;
-
-    public function hasNextPage(): bool;
-
-    public function getNextPage(): int;
-
-    public function getLastPage(): int;
-
-    public function count(): int;
 }

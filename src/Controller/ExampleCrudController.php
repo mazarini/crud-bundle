@@ -22,6 +22,7 @@ namespace App\Controller;
 use App\Entity\Example;
 use App\Form\ExampleType;
 use App\Repository\ExampleRepository;
+use Mazarini\CrudBundle\Controller\AbstractCrudController;
 use Mazarini\ToolsBundle\Entity\EntityInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;

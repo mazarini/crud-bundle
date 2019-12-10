@@ -17,13 +17,13 @@
  * You should have received a copy of the GNU General Public License
  */
 
-namespace App\Repository;
+namespace Mazarini\CrudBundle\Repository;
 
-use App\Pagination\Pagination;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
 use Doctrine\ORM\Tools\Pagination\CountWalker;
 use Doctrine\ORM\Tools\Pagination\Paginator as DoctrinePaginator;
+use Mazarini\CrudBundle\Pagination\Pagination;
 
 abstract class AbstractRepository extends ServiceEntityRepository
 {

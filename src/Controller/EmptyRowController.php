@@ -22,6 +22,7 @@ namespace App\Controller;
 use App\Entity\EmptyRow;
 use App\Form\EmptyRowType;
 use App\Repository\EmptyRowRepository;
+use Mazarini\CrudBundle\Controller\AbstractCrudController;
 use Mazarini\ToolsBundle\Entity\EntityInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;

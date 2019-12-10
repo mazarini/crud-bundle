@@ -17,21 +17,34 @@
  * You should have received a copy of the GNU General Public License
  */
 
-namespace App\Repository;
+namespace Mazarini\CrudBundle\Pagination;
 
-use App\Entity\User;
-use Doctrine\Common\Persistence\ManagerRegistry;
-use Mazarini\CrudBundle\Repository\AbstractRepository;
+use Mazarini\ToolsBundle\Entity\EntityInterface;
 
-/**
- * @method User|null find($id, $lockMode = null, $lockVersion = null)
- * @method User|null findOneBy(array $criteria, array $orderBy = null)
- * @method User[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
- */
-class UserRepository extends AbstractRepository
+interface PaginationInterface
 {
-    public function __construct(ManagerRegistry $registry)
-    {
-        parent::__construct($registry, User::class);
-    }
+    /**
+     * getEntities.
+     *
+     * @return \ArrayIterator<int,EntityInterface>
+     */
+    public function getEntities(): \ArrayIterator;
+
+    public function hasToPaginate(): bool;
+
+    public function hasPreviousPage(): bool;
+
+    public function getFirstPage(): int;
+
+    public function getPreviousPage(): int;
+
+    public function getCurrentPage(): int;
+
+    public function hasNextPage(): bool;
+
+    public function getNextPage(): int;
+
+    public function getLastPage(): int;
+
+    public function count(): int;
 }

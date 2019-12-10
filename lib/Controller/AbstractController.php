@@ -17,9 +17,9 @@
  * You should have received a copy of the GNU General Public License
  */
 
-namespace App\Controller;
+namespace Mazarini\CrudBundle\Controller;
 
-use App\Tool\Data;
+use Mazarini\CrudBundle\Tool\Data;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController as SymfonyControler;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Response;
