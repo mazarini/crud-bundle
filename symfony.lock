@@ -337,6 +337,9 @@
             "tests/.gitignore"
         ]
     },
+    "symfony/polyfill-ctype": {
+        "version": "v1.13.1"
+    },
     "symfony/polyfill-intl-icu": {
         "version": "v1.13.1"
     },
@@ -344,6 +347,9 @@
         "version": "v1.13.1"
     },
     "symfony/polyfill-mbstring": {
+        "version": "v1.13.1"
+    },
+    "symfony/polyfill-php72": {
         "version": "v1.13.1"
     },
     "symfony/polyfill-php73": {
