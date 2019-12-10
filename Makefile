@@ -19,9 +19,9 @@ composer:
 	composer -vv validate --strict
 
 twig:
-	bin/console lint:twig templates/ lib/Resources/config
+	bin/console lint:twig templates/ lib/Resources/views/
 	twigcs templates -vv
-	twigcs lib/Resources/config -vv
+	twigcs lib/Resources/views -vv
  
 
 yaml:

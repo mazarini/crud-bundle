@@ -19,7 +19,9 @@
 
 namespace Mazarini\CrudBundle\Controller;
 
-use Mazarini\CrudBundle\Tool\Data;
+use Mazarini\PaginationBundle\Controller\AbstractController;
+use Mazarini\PaginationBundle\Controller\AbstractPaginationController;
+use Mazarini\PaginationBundle\Tool\Data;
 use Mazarini\ToolsBundle\Entity\EntityInterface;
 use Symfony\Component\Form\Form;
 use Symfony\Component\HttpFoundation\Request;

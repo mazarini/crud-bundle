@@ -21,7 +21,7 @@ namespace App\Controller;
 
 use App\Entity\Example;
 use App\Repository\ExampleRepository;
-use Mazarini\CrudBundle\Controller\AbstractPaginationController;
+use Mazarini\PaginationBundle\Controller\AbstractPaginationController;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;

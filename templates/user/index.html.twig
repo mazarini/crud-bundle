@@ -1,4 +1,4 @@
-{% extends '@MazariniCrud/pagination/_list.html.twig' %}
+{% extends '@MazariniPagination/_list.html.twig' %}
 
 {% block title %}
 	User index
@@ -18,9 +18,9 @@
 {% endblock page_row %}
 
 {% block page_not_found %}
-	{% include '@MazariniCrud/pagination/nothing.html.twig'with {'span': 4} %}
+	{% include '@MazariniPagination/nothing.html.twig'with {'span': 4} %}
 {% endblock page_not_found %}
 
 {% block page_new %}
-	{% include '@MazariniCrud/pagination/new.html.twig' with {'span': 3} %}
+	{% include '@MazariniPagination/new.html.twig' with {'span': 3} %}
 {% endblock page_new %}

@@ -21,7 +21,7 @@ namespace App\Repository;
 
 use App\Entity\Five;
 use Doctrine\Common\Persistence\ManagerRegistry;
-use Mazarini\CrudBundle\Repository\AbstractRepository;
+use Mazarini\PaginationBundle\Repository\AbstractRepository;
 
 /**
  * @method Five|null find($id, $lockMode = null, $lockVersion = null)
