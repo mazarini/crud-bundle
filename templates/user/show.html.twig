@@ -1,0 +1,20 @@
+{% extends 'crud/_view.html.twig' %}
+
+{% block title %}
+	User
+{% endblock title %}
+
+{% block view_content %}
+	<tr>
+		<th>Username</th>
+		<td>{{ data.entity.username }}</td>
+	</tr>
+	<tr>
+		<th>Name</th>
+		<td>{{ data.entity.fullName }}</td>
+	</tr>
+	<tr>
+		<th>Email</th>
+		<td>{{ data.entity.email }}</td>
+	</tr>
+{% endblock view_content %}

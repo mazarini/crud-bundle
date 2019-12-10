@@ -1,0 +1,6 @@
+parameters:
+    autoload_files:
+        - var/cache/phpunit/phpunit-8.3-0/vendor/autoload.php
+    tmpDir: "%currentWorkingDirectory%/var"
+    excludes_analyse:
+        - '%rootDir%/src/Migrations/*'

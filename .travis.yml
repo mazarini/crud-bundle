@@ -1,0 +1,89 @@
+language: php
+os: linux
+
+cache:
+  directories:
+    - $HOME/.composer/cache/files
+    - $HOME/.composer/vendor
+    - ./var/cache/phpunit
+
+env:
+  global:
+    - SYMFONY_PHPUNIT_DIR=./var/cache/phpunit
+    - SYMFONY_DEPRECATIONS_HELPER=0
+    - OPTION=
+    - INSTALL="update"
+    - SYNFONY=
+    - STABILITY=
+    - CONTROL=
+
+jobs:
+  fast_finish: true
+  include:
+#   Controle
+    - php: 7.2
+      env: INSTALL="install"
+           CONTROL="YES"
+#   PHP version
+    - php: 7.3
+      env: INSTALL="install"
+    - php: 7.4
+      env: INSTALL="install"
+    - php: nightly
+      env: OPTION="nightly"
+           INSTALL="install"
+#   symfony version
+    - php: 7.2
+      env: symfony="4.4.*"
+    - php: 7.2
+      env: symfony="5.0.*"
+#   symfony dev version
+    - php: 7.2
+      env: symfony="4.4.*"
+           STABILITY="dev"
+    - php: 7.2
+      env: symfony="5.0.*"
+           STABILITY="dev"
+    - php: 7.2
+      env: symfony="5.1.*"
+           STABILITY="dev"
+  allow_failures:
+#   PHP version dev version
+    - php: nightly
+      env: OPTION="nightly"
+           INSTALL="install"
+#   symfony dev version
+    - php: 7.2
+      env: symfony="4.4.*"
+           STABILITY="dev"
+    - php: 7.2
+      env: symfony="5.0.*"
+           STABILITY="dev"
+    - php: 7.2
+      env: symfony="5.1.*"
+           STABILITY="dev"
+
+before_install:
+  - echo "memory_limit=-1" >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
+  - export PATH=$PATH:$(composer global config bin-dir --absolute)
+  - composer self-update
+  - '[[ "$SYMFONY" == "" ]] || composer config extra.symfony.require $SYMFONY'
+  - '[[ "$STABILITY" == "" ]] || composer config minimum-stability $STABILITY'
+
+install:
+  - '[[ "$OPTION" == "" ]] || phpenv global 7.2 && php -v'
+  - '[[ "$CONTROL" == "" ]] || composer global require friendsofphp/php-cs-fixer sensiolabs/security-checker friendsoftwig/twigcs phpstan/phpstan-symfony'
+  - composer $INSTALL
+  - ./bin/phpunit install
+  - '[[ "$OPTION" == "" ]] || phpenv global $OPTION && php -v'
+  - cp var/data/origine.db var/data/sqlite.db
+script:
+  - '[[ "$CONTROL" == "YES" ]] || ./bin/phpunit -v'
+  - '[[ "$CONTROL" == "" ]] || ./bin/phpunit -v --coverage-text'
+  - '[[ "$CONTROL" == "" ]] || security-checker security:check'
+  - '[[ "$CONTROL" == "" ]] || php-cs-fixer fix'
+  - '[[ "$CONTROL" == "" ]] || twigcs templates -vv'
+  - '[[ "$CONTROL" == "" ]] || bin/console lint:twig templates/'
+  - '[[ "$CONTROL" == "" ]] || phpstan analyse src tests --level max'
+  - '[[ "$CONTROL" == "" ]] || bin/console lint:yaml config phpstan.neon.dist .travis.yml'
+  - '[[ "$CONTROL" == "" ]] || composer -vv validate --strict'

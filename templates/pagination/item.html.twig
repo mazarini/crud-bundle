@@ -1,0 +1,11 @@
+{# lib/Resources/views/pagination/item.html.twig #}
+
+{% block item_container %}
+	<li class="page-item{{ link.class }}">
+		<a class="page-link" href="{{ link.url }}">
+			{% block label %}
+				{{ number }}
+			{% endblock label %}
+		</a>
+	</li>
+{% endblock item_container %}

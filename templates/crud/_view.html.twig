@@ -1,0 +1,10 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+	<table class="table">
+		<tbody>
+			{% block view_content %}{% endblock view_content %}
+		</tbody>
+	</table>
+	{% include 'crud/_button.html.twig' %}
+{% endblock content %}

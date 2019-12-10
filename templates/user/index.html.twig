@@ -1,0 +1,26 @@
+{% extends 'pagination/_list.html.twig' %}
+
+{% block title %}
+	User index
+{% endblock %}
+
+{% block page_title %}
+	<th>Username</th>
+	<th>Name</th>
+	<th>Email</th>
+	<th>actions</th>
+{% endblock page_title %}
+
+{% block page_row %}
+	<td>{{ entity.username }}</td>
+	<td>{{ entity.fullName }}</td>
+	<td>{{ entity.email }}</td>
+{% endblock page_row %}
+
+{% block page_not_found %}
+	{% include 'pagination/nothing.html.twig'with {'span': 4} %}
+{% endblock page_not_found %}
+
+{% block page_new %}
+	{% include 'pagination/new.html.twig' with {'span': 3} %}
+{% endblock page_new %}
