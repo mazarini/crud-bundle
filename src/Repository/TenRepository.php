@@ -17,28 +17,21 @@
  * You should have received a copy of the GNU General Public License
  */
 
-namespace App\DataFixtures;
+namespace App\Repository;
 
-use App\Entity\Example;
-use Doctrine\Bundle\FixturesBundle\Fixture;
-use Doctrine\Common\Persistence\ObjectManager;
-use Mazarini\ToolsBundle\Entity\EntityInterface;
+use App\Entity\Ten;
+use Doctrine\Common\Persistence\ManagerRegistry;
+use Mazarini\PaginationBundle\Repository\AbstractRepository;
 
-class ExampleFixtures extends Fixture
+/**
+ * @method Ten|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Ten|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Ten[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ */
+class TenRepository extends AbstractRepository
 {
-    public function load(ObjectManager $manager): void
+    public function __construct(ManagerRegistry $registry)
     {
-        for ($i = 1; $i <= 55; ++$i) {
-            $manager->persist($this->getEntity($i));
-        }
-
-        $manager->flush();
-    }
-
-    protected function getEntity(int $i): EntityInterface
-    {
-        $entity = new Example();
-
-        return $entity->setCol1(sprintf('row%02d / col1', $i))->setCol2(sprintf('row%02d / col2', $i));
+        parent::__construct($registry, Ten::class);
     }
 }

@@ -22,7 +22,7 @@ namespace App\Tests\Controller;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-class UrlExamplePaginationControllerTest extends WebTestCase
+class UrlTenPaginationControllerTest extends WebTestCase
 {
     /**
      * @var KernelBrowser;

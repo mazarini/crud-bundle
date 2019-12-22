@@ -19,8 +19,8 @@
 
 namespace App\Controller;
 
-use App\Entity\Example;
-use App\Repository\ExampleRepository;
+use App\Entity\Ten;
+use App\Repository\TenRepository;
 use Mazarini\PaginationBundle\Controller\AbstractPaginationController;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Response;
@@ -30,16 +30,16 @@ use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 /**
  * @Route("/")
  */
-class ExamplePaginationController extends AbstractPaginationController
+class TenPaginationController extends AbstractPaginationController
 {
     public function __construct(RequestStack $requestStack, UrlGeneratorInterface $router)
     {
-        parent::__construct($requestStack, $router, 'example_page');
-        $this->twigFolder = 'example/';
+        parent::__construct($requestStack, $router, 'ten_page');
+        $this->twigFolder = 'ten/';
     }
 
     /**
-     * @Route("/", name="example_page_index", methods={"GET"})
+     * @Route("/", name="ten_page_index", methods={"GET"})
      */
     public function index(): Response
     {
@@ -47,17 +47,17 @@ class ExamplePaginationController extends AbstractPaginationController
     }
 
     /**
-     * @Route("/page-{page<[1-9]\d*>}.html", name="example_page_page", methods={"GET"})
+     * @Route("/page-{page<[1-9]\d*>}.html", name="ten_page_page", methods={"GET"})
      */
-    public function page(ExampleRepository $ExampleRepository, int $page = 1): Response
+    public function page(TenRepository $TenRepository, int $page = 1): Response
     {
-        return $this->PageAction($ExampleRepository, $page);
+        return $this->PageAction($TenRepository, $page);
     }
 
     /**
-     * @Route("/show-{id<[1-9]\d*>}.html", name="example_page_show", methods={"GET"})
+     * @Route("/show-{id<[1-9]\d*>}.html", name="ten_page_show", methods={"GET"})
      */
-    public function show(Example $entity): Response
+    public function show(Ten $entity): Response
     {
         return $this->showAction($entity);
     }

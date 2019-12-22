@@ -1,0 +1,26 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}
+	Example index
+{% endblock %}
+
+{% block content %}
+
+	{% embed '@MazariniPagination/_list.html.twig' with {'span': 3} %}
+
+		{% block page_header %}
+			<th>Id</th>
+			<th>Col1</th>
+			<th>Col2</th>
+			<th>actions</th>
+		{% endblock page_header %}
+
+		{% block page_row %}
+			<td>{{ entity.id }}</td>
+			<td>{{ entity.col1 }}</td>
+			<td>{{ entity.col2 }}</td>
+		{% endblock page_row %}
+
+	{% endembed %}
+
+{% endblock content %}

@@ -19,9 +19,9 @@
 
 namespace App\Controller;
 
-use App\Entity\Example;
-use App\Form\ExampleType;
-use App\Repository\ExampleRepository;
+use App\Entity\Ten;
+use App\Form\TenType;
+use App\Repository\TenRepository;
 use Mazarini\CrudBundle\Controller\AbstractCrudController;
 use Mazarini\ToolsBundle\Entity\EntityInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -31,18 +31,18 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
 /**
- * @Route("/example")
+ * @Route("/Ten")
  */
-class ExampleCrudController extends AbstractCrudController
+class TenCrudController extends AbstractCrudController
 {
     public function __construct(RequestStack $requestStack, UrlGeneratorInterface $router)
     {
-        parent::__construct($requestStack, $router, 'example');
-        $this->twigFolder = 'example/';
+        parent::__construct($requestStack, $router, 'ten');
+        $this->twigFolder = 'ten/';
     }
 
     /**
-     * @Route("/", name="example_index", methods={"GET"})
+     * @Route("/", name="ten_index", methods={"GET"})
      */
     public function index(): Response
     {
@@ -50,43 +50,43 @@ class ExampleCrudController extends AbstractCrudController
     }
 
     /**
-     * @Route("/page-{page<[1-9]\d*>}.html", name="example_page", methods={"GET"})
+     * @Route("/page-{page<[1-9]\d*>}.html", name="ten_page", methods={"GET"})
      */
-    public function page(ExampleRepository $ExampleRepository, int $page = 1): Response
+    public function page(TenRepository $tenRepository, int $page = 1): Response
     {
-        return $this->PageAction($ExampleRepository, $page);
+        return $this->PageAction($tenRepository, $page);
     }
 
     /**
-     * @Route("/new.html", name="example_new", methods={"GET","POST"})
+     * @Route("/new.html", name="ten_new", methods={"GET","POST"})
      */
     public function new(Request $request): Response
     {
-        return $this->editAction($request, new Example(), ExampleType::class);
+        return $this->editAction($request, new Ten(), TenType::class);
     }
 
     /**
-     * @Route("/show-{id<[1-9]\d*>}.html", name="example_show", methods={"GET"})
+     * @Route("/show-{id<[1-9]\d*>}.html", name="ten_show", methods={"GET"})
      */
-    public function show(Example $entity): Response
+    public function show(Ten $entity): Response
     {
         return $this->showAction($entity);
     }
 
     /**
-     * @Route("/edit-{id<[1-9]\d*>}.html", name="example_edit", methods={"GET","POST"})
+     * @Route("/edit-{id<[1-9]\d*>}.html", name="ten_edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, Example $entity): Response
+    public function edit(Request $request, Ten $entity): Response
     {
-        return $this->editAction($request, $entity, ExampleType::class);
+        return $this->editAction($request, $entity, TenType::class);
     }
 
     /**
      * delete.
      *
-     * @Route("/delete-{id<[1-9]\d*>.html}", name="example_delete", methods={"DELETE"})
+     * @Route("/delete-{id<[1-9]\d*>}.html", name="ten_delete", methods={"DELETE"})
      */
-    public function delete(Request $request, Example $entity): Response
+    public function delete(Request $request, Ten $entity): Response
     {
         return $this->deleteAction($request, $entity);
     }

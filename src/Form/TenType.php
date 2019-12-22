@@ -19,12 +19,12 @@
 
 namespace App\Form;
 
-use App\Entity\Example;
+use App\Entity\Ten;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class ExampleType extends AbstractType
+class TenType extends AbstractType
 {
     /**
      * buildForm.
@@ -52,7 +52,7 @@ class ExampleType extends AbstractType
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => Example::class,
+            'data_class' => Ten::class,
         ]);
     }
 }
