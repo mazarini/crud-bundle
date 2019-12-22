@@ -10,7 +10,7 @@ cache:
 env:
   global:
     - SYMFONY_PHPUNIT_DIR=./var/cache/phpunit
-    - SYMFONY_DEPRECATIONS_HELPER=0
+    - SYMFONY_DEPRECATIONS_HELPER=10
     - OPTION=
     - INSTALL="update"
     - SYNFONY=
@@ -84,7 +84,7 @@ script:
   - '[[ "$CONTROL" == "" ]] || php-cs-fixer fix'
   - '[[ "$CONTROL" == "" ]] || twigcs templates -vv'
   - '[[ "$CONTROL" == "" ]] || twigcs lib/Resources/views -vv'
-  - '[[ "$CONTROL" == "" ]] || bin/console lint:twig templates/ lib/Resources/views/'
+  - '[[ "$CONTROL" == "" ]] || bin/console lint:twig lib/Resources/views/ templates/'
   - '[[ "$CONTROL" == "" ]] || phpstan analyse src tests --level max'
   - '[[ "$CONTROL" == "" ]] || bin/console lint:yaml config phpstan.neon.dist .travis.yml'
   - '[[ "$CONTROL" == "" ]] || composer -vv validate --strict'
