@@ -19,9 +19,9 @@
 
 namespace App\Controller;
 
-use App\Entity\EmptyRow;
-use App\Form\EmptyRowType;
-use App\Repository\EmptyRowRepository;
+use App\Entity\Zero;
+use App\Form\ZeroType;
+use App\Repository\ZeroRepository;
 use Mazarini\CrudBundle\Controller\AbstractCrudController;
 use Mazarini\ToolsBundle\Entity\EntityInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -31,18 +31,18 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
 /**
- * @Route("/empty")
+ * @Route("/zero")
  */
-class EmptyRowController extends AbstractCrudController
+class ZeroController extends AbstractCrudController
 {
     public function __construct(RequestStack $requestStack, UrlGeneratorInterface $router)
     {
-        parent::__construct($requestStack, $router, 'empty_row');
-        $this->twigFolder = 'emptyRow/';
+        parent::__construct($requestStack, $router, 'zero');
+        $this->twigFolder = 'zero/';
     }
 
     /**
-     * @Route("/", name="empty_row_index", methods={"GET"})
+     * @Route("/", name="zero_index", methods={"GET"})
      */
     public function index(): Response
     {
@@ -50,43 +50,43 @@ class EmptyRowController extends AbstractCrudController
     }
 
     /**
-     * @Route("/page-{page<[1-9]\d*>}.html", name="empty_row_page", methods={"GET"})
+     * @Route("/page-{page<[1-9]\d*>}.html", name="zero_page", methods={"GET"})
      */
-    public function page(EmptyRowRepository $EmptyRowRepository, int $page = 1): Response
+    public function page(ZeroRepository $ZeroRepository, int $page = 1): Response
     {
-        return $this->PageAction($EmptyRowRepository, $page);
+        return $this->PageAction($ZeroRepository, $page);
     }
 
     /**
-     * @Route("/new.html", name="empty_row_new", methods={"GET","POST"})
+     * @Route("/new.html", name="zero_new", methods={"GET","POST"})
      */
     public function new(Request $request): Response
     {
-        return $this->editAction($request, new EmptyRow(), EmptyRowType::class);
+        return $this->editAction($request, new Zero(), ZeroType::class);
     }
 
     /**
-     * @Route("/show-{id<[1-9]\d*>}.html", name="empty_row_show", methods={"GET"})
+     * @Route("/show-{id<[1-9]\d*>}.html", name="zero_show", methods={"GET"})
      */
-    public function show(EmptyRow $entity): Response
+    public function show(Zero $entity): Response
     {
         return $this->showAction($entity);
     }
 
     /**
-     * @Route("/edit-{id<[1-9]\d*>}.html", name="empty_row_edit", methods={"GET","POST"})
+     * @Route("/edit-{id<[1-9]\d*>}.html", name="zero_edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, EmptyRow $entity): Response
+    public function edit(Request $request, Zero $entity): Response
     {
-        return $this->editAction($request, $entity, EmptyRowType::class);
+        return $this->editAction($request, $entity, ZeroType::class);
     }
 
     /**
      * delete.
      *
-     * @Route("/delete-{id<[1-9]\d*>}.html", name="empty_row_delete", methods={"DELETE"})
+     * @Route("/delete-{id<[1-9]\d*>}.html", name="zero_delete", methods={"DELETE"})
      */
-    public function delete(Request $request, EmptyRow $entity): Response
+    public function delete(Request $request, Zero $entity): Response
     {
         return $this->deleteAction($request, $entity);
     }

@@ -19,19 +19,19 @@
 
 namespace App\Repository;
 
-use App\Entity\EmptyRow;
+use App\Entity\Zero;
 use Doctrine\Common\Persistence\ManagerRegistry;
 use Mazarini\PaginationBundle\Repository\AbstractRepository;
 
 /**
- * @method EmptyRow|null find($id, $lockMode = null, $lockVersion = null)
- * @method EmptyRow|null findOneBy(array $criteria, array $orderBy = null)
- * @method EmptyRow[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Zero|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Zero|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Zero[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class EmptyRowRepository extends AbstractRepository
+class ZeroRepository extends AbstractRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, EmptyRow::class);
+        parent::__construct($registry, Zero::class);
     }
 }

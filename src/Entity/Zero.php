@@ -23,9 +23,9 @@ use Doctrine\ORM\Mapping as ORM;
 use Mazarini\ToolsBundle\Entity\EntityInterface;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\EmptyRowRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\ZeroRepository")
  */
-class EmptyRow implements EntityInterface
+class Zero implements EntityInterface
 {
     /**
      * @ORM\Id()

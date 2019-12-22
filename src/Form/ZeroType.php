@@ -19,12 +19,12 @@
 
 namespace App\Form;
 
-use App\Entity\EmptyRow;
+use App\Entity\Zero;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class EmptyRowType extends AbstractType
+class ZeroType extends AbstractType
 {
     /**
      * buildForm.
@@ -52,7 +52,7 @@ class EmptyRowType extends AbstractType
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => EmptyRow::class,
+            'data_class' => Zero::class,
         ]);
     }
 }
