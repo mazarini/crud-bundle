@@ -31,7 +31,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
 /**
- * @Route("/Ten")
+ * @Route("/ten")
  */
 class TenCrudController extends AbstractCrudController
 {

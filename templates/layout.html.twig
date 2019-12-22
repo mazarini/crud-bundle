@@ -23,13 +23,13 @@
 					</a>
 				</div>
 				<div class="list-group">
-					<a href="{{ path('example_page_index') }}" class="list-group-item list-group-item-action">
+					<a href="{{ path('ten_page_index') }}" class="list-group-item list-group-item-action">
 						Pagination
 					</a>
 				</div>
 				<div class="list-group">
-					<a href="{{ path('example_index') }}" class="list-group-item list-group-item-action">
-						Example
+					<a href="{{ path('ten_index') }}" class="list-group-item list-group-item-action">
+						Ten pages
 					</a>
 				</div>
 				<div class="list-group">
@@ -38,7 +38,7 @@
 					</a>
 				</div>
 				<div class="list-group">
-					<a href="{{ path('empty_row_index') }}" class="list-group-item list-group-item-action">
+					<a href="{{ path('zero_index') }}" class="list-group-item list-group-item-action">
 						Empty table
 					</a>
 				</div>
@@ -54,6 +54,6 @@
 {% endblock body %}
 {% block static %}
 	{% if data.isSetEntity %}
-		{{ include('@MazariniCrud/_delete_form.html.twig') }}
+		{% include '@MazariniCrud/_delete_form.html.twig' with {'modal_id': 'modalDeleteId'} %}
 	{% endif %}
 {% endblock static %}

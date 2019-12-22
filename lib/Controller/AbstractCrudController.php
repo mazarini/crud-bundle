@@ -19,9 +19,9 @@
 
 namespace Mazarini\CrudBundle\Controller;
 
-use Mazarini\PaginationBundle\Controller\AbstractController;
 use Mazarini\PaginationBundle\Controller\AbstractPaginationController;
-use Mazarini\PaginationBundle\Tool\Data;
+use Mazarini\ToolsBundle\Controller\AbstractController;
+use Mazarini\ToolsBundle\Data\Data;
 use Mazarini\ToolsBundle\Entity\EntityInterface;
 use Symfony\Component\Form\Form;
 use Symfony\Component\HttpFoundation\Request;
@@ -68,7 +68,7 @@ abstract class AbstractCrudController extends AbstractPaginationController
 
     protected function initUrl(Data $data): AbstractController
     {
-        $this->listUrl($data, ['_show', '_edit']);
+        $this->listUrl($data, ['show', 'edit']);
         $this->paginationUrl($data);
         $this->crudUrl($data);
 

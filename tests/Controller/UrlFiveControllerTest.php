@@ -59,8 +59,8 @@ class UrlFiveControllerTest extends WebTestCase
         yield ['/five/', 'GET', 302];
         yield ['/five/page-0.html', 'GET', 404];
         yield ['/five/page-1.html'];
-        yield ['/five/page-6.html'];
-        yield ['/five/page-7.html'];
+        yield ['/five/page-5.html'];
+        yield ['/five/page-6.html', 'GET', 302];
         yield ['/five/new.html'];
         yield ['/five/show-1.html', 'GET', 200];
         yield ['/five/edit-1.html', 'GET', 200];

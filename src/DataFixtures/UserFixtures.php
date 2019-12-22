@@ -45,7 +45,7 @@ class UserFixtures extends Fixture
             $user->setUsername($username);
             $user->setEmail($email);
             $user->setRoles([$role]);
-            $user->setPassword($this->passwordEncoder->encodePassword($user, $password));
+            $user->setPassword($password);
             $manager->persist($user);
         }
 
@@ -63,7 +63,7 @@ class UserFixtures extends Fixture
         $entity->setFullName(sprintf('Name%02d', $i));
         $entity->setEmail(sprintf('name%02d@example.com', $i));
         $entity->setRoles(['ROLES_USER']);
-        $entity->setPassword($this->passwordEncoder->encodePassword($entity, sprintf('pass%02d', $i)));
+        $entity->setPassword(sprintf('pass%02d', $i));
 
         return $entity;
     }

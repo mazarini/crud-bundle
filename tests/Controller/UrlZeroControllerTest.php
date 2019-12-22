@@ -59,7 +59,7 @@ class UrlZeroControllerTest extends WebTestCase
         yield ['/zero/', 'GET', 302];
         yield ['/zero/page-0.html', 'GET', 404];
         yield ['/zero/page-1.html'];
-        yield ['/zero/page-2.html'];
+        yield ['/zero/page-2.html', 'GET', 302];
         yield ['/zero/new.html'];
         yield ['/zero/show-1.html', 'GET', 404];
         yield ['/zero/edit-1.html', 'GET', 404];

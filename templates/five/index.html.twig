@@ -1,26 +1,26 @@
-{% extends '@MazariniPagination/_list.html.twig' %}
+{% extends 'layout.html.twig' %}
 
 {% block title %}
 	Five index
 {% endblock %}
 
-{% block page_title %}
-	<th>Id</th>
-	<th>Col1</th>
-	<th>Col2</th>
-	<th>actions</th>
-{% endblock page_title %}
+{% block content %}
 
-{% block page_row %}
-	<td>{{ entity.id }}</td>
-	<td>{{ entity.col1 }}</td>
-	<td>{{ entity.col2 }}</td>
-{% endblock page_row %}
+	{% embed '@MazariniPagination/_list.html.twig' with {'span': 3} %}
 
-{% block page_not_found %}
-	{% include '@MazariniPagination/nothing.html.twig'with {'span': 4} %}
-{% endblock page_not_found %}
+		{% block page_header %}
+			<th>Id</th>
+			<th>Col1</th>
+			<th>Col2</th>
+			<th>actions</th>
+		{% endblock page_header %}
 
-{% block page_new %}
-	{% include '@MazariniPagination/new.html.twig' with {'span': 3} %}
-{% endblock page_new %}
+		{% block page_row %}
+			<td>{{ entity.id }}</td>
+			<td>{{ entity.col1 }}</td>
+			<td>{{ entity.col2 }}</td>
+		{% endblock page_row %}
+
+	{% endembed %}
+
+{% endblock content %}
