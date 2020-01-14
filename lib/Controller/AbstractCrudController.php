@@ -55,7 +55,7 @@ abstract class AbstractCrudController extends AbstractPaginationController
             if (0 !== $id) {
                 $parameters = ['id' => $id];
                 foreach (['_edit', '_show', '_delete'] as $action) {
-                    $data->addLink($action, $action, $parameters);
+                    $data->addLink(trim($action, '_'), $data->generateUrl($action, $parameters));
                 }
             }
         }
@@ -71,6 +71,7 @@ abstract class AbstractCrudController extends AbstractPaginationController
         $this->listUrl($data, ['show', 'edit']);
         $this->paginationUrl($data);
         $this->crudUrl($data);
+        $data->addLink('new', $data->generateUrl('_new'), 'Create');
 
         return $this;
     }
@@ -87,7 +88,7 @@ abstract class AbstractCrudController extends AbstractPaginationController
             }
             $entityManager->flush();
 
-            return $this->redirectToRoute($this->data->getRoute('_show'), ['id' => $entity->getId()]);
+            return $this->redirect($this->data->generateUrl('_show', ['id' => $entity->getId()]));
         }
 
         $this->data->setEntity($entity);
@@ -110,7 +111,7 @@ abstract class AbstractCrudController extends AbstractPaginationController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute($this->data->getRoute('_index'));
+        return $this->redirect($this->data->generateUrl('_index'));
     }
 
     abstract protected function valid(EntityInterface $entity): bool;
