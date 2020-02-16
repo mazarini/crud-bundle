@@ -9,21 +9,24 @@ cache:
 
 env:
   global:
-    - SYMFONY_PHPUNIT_DIR=./var/cache/phpunit
-    - SYMFONY_DEPRECATIONS_HELPER=10
-    - OPTION=
-    - INSTALL="update"
-    - SYNFONY=
-    - STABILITY=
+    - COMPOSER_MEMORY_LIMIT=-1
     - CONTROL=
+    - INSTALL="update"
+    - OPTION=
+    - SYMFONY=
+    - SYMFONY_DEPRECATIONS_HELPER=0
+    - SYMFONY_PHPUNIT_DIR=./var/cache/phpunit
+    - STABILITY=
 
 jobs:
   fast_finish: true
   include:
+
 #   Controle
     - php: 7.2
       env: INSTALL="install"
            CONTROL="YES"
+
 #   PHP version
     - php: 7.3
       env: INSTALL="install"
@@ -31,37 +34,49 @@ jobs:
       env: INSTALL="install"
     - php: nightly
       env: OPTION="nightly"
-           INSTALL="install"
+           STABILITY="dev"
+           SYMFONY_DEPRECATIONS_HELPER=8
+
 #   symfony version
     - php: 7.2
-      env: symfony="4.4.*"
+      env: SYMFONY="4.4.*"
+           SYMFONY_DEPRECATIONS_HELPER=0
     - php: 7.2
-      env: symfony="5.0.*"
+      env: INSTALL="install"
+
 #   symfony dev version
     - php: 7.2
-      env: symfony="4.4.*"
+      env: SYMFONY="4.4.*"
            STABILITY="dev"
+           SYMFONY_DEPRECATIONS_HELPER=8
     - php: 7.2
-      env: symfony="5.0.*"
-           STABILITY="dev"
+      env: STABILITY="dev"
+           SYMFONY_DEPRECATIONS_HELPER=8
     - php: 7.2
-      env: symfony="5.1.*"
+      env: SYMFONY="5.1.*"
            STABILITY="dev"
+           SYMFONY_DEPRECATIONS_HELPER=8
+
   allow_failures:
+
 #   PHP version dev version
     - php: nightly
       env: OPTION="nightly"
-           INSTALL="install"
+           STABILITY="dev"
+           SYMFONY_DEPRECATIONS_HELPER=8
+
 #   symfony dev version
     - php: 7.2
-      env: symfony="4.4.*"
+      env: SYMFONY="4.4.*"
            STABILITY="dev"
+           SYMFONY_DEPRECATIONS_HELPER=8
     - php: 7.2
-      env: symfony="5.0.*"
-           STABILITY="dev"
+      env: STABILITY="dev"
+           SYMFONY_DEPRECATIONS_HELPER=8
     - php: 7.2
-      env: symfony="5.1.*"
+      env: SYMFONY="5.1.*"
            STABILITY="dev"
+           SYMFONY_DEPRECATIONS_HELPER=8
 
 before_install:
   - echo "memory_limit=-1" >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
@@ -85,6 +100,6 @@ script:
   - '[[ "$CONTROL" == "" ]] || twigcs templates -vv'
   - '[[ "$CONTROL" == "" ]] || twigcs lib/Resources/views -vv'
   - '[[ "$CONTROL" == "" ]] || bin/console lint:twig lib/Resources/views/ templates/'
-  - '[[ "$CONTROL" == "" ]] || phpstan analyse src tests --level max'
-  - '[[ "$CONTROL" == "" ]] || bin/console lint:yaml config phpstan.neon.dist .travis.yml'
+  - '[[ "$CONTROL" == "" ]] || phpstan analyse lib src tests --level max'
+  - '[[ "$CONTROL" == "" ]] || bin/console lint:yaml config lib/Resources/config phpstan.neon.dist .travis.yml'
   - '[[ "$CONTROL" == "" ]] || composer -vv validate --strict'
