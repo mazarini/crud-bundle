@@ -1,57 +1,29 @@
 {# templates/layout.html.twig #}
 
-{%- extends 'base.html.twig' -%}
+{%- extends '@MazariniTest/layout.html.twig' -%}
 
-{% block title_head %}
-	Title
-{% endblock title_head %}
-{% block stylesheets %}
-	{{ parent() }}
-	<style>
-		body {
-			padding-top: 2rem;
-		}
-	</style>
-{% endblock stylesheets %}
-{% block body %}
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-3">
-				<div class="list-group">
-					<a href="{{ path('user_index') }}" class="list-group-item list-group-item-action">
-						User
-					</a>
-				</div>
-				<div class="list-group">
-					<a href="{{ path('ten_page_index') }}" class="list-group-item list-group-item-action">
-						Pagination
-					</a>
-				</div>
-				<div class="list-group">
-					<a href="{{ path('ten_index') }}" class="list-group-item list-group-item-action">
-						Ten pages
-					</a>
-				</div>
-				<div class="list-group">
-					<a href="{{ path('five_index') }}" class="list-group-item list-group-item-action">
-						Five pages
-					</a>
-				</div>
-				<div class="list-group">
-					<a href="{{ path('zero_index') }}" class="list-group-item list-group-item-action">
-						Empty table
-					</a>
-				</div>
-			</div>
-			<div class="col-9">
-				<h1>
-					{% block title %}{% endblock title %}
-				</h1>
-				{% block content %}{% endblock content %}
-			</div>
-		</div>
+{% block first_bar_container %}
+	<div class="list-group">
+		<a href="{{ path('user_index') }}" class="list-group-item list-group-item-action">
+			User
+		</a>
 	</div>
-{% endblock body %}
+	<div class="list-group">
+		<a href="{{ path('zero_index') }}" class="list-group-item list-group-item-action">
+			Empty table
+		</a>
+	</div>
+	<div class="list-group">
+		<a href="{{ path('five_index') }}" class="list-group-item list-group-item-action">
+			Five pages
+		</a>
+	</div>
+	<div class="list-group">
+		<a href="{{ path('ten_index') }}" class="list-group-item list-group-item-action">
+			Ten pages
+		</a>
+	</div>
+{% endblock first_bar_container %}
 {% block static %}
 	{% if data.isSetEntity %}
 		{% include '@MazariniCrud/_delete_form.html.twig' with {'modal_id': 'modalDeleteId'} %}

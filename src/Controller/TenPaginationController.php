@@ -22,22 +22,14 @@ namespace App\Controller;
 use App\Entity\Ten;
 use App\Repository\TenRepository;
 use Mazarini\PaginationBundle\Controller\AbstractPaginationController;
-use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
 /**
  * @Route("/")
  */
 class TenPaginationController extends AbstractPaginationController
 {
-    public function __construct(RequestStack $requestStack, UrlGeneratorInterface $router)
-    {
-        parent::__construct($requestStack, $router, 'ten_page');
-        $this->twigFolder = 'ten/';
-    }
-
     /**
      * @Route("/", name="ten_page_index", methods={"GET"})
      */

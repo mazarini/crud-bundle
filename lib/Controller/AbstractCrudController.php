@@ -20,22 +20,14 @@
 namespace Mazarini\CrudBundle\Controller;
 
 use Mazarini\PaginationBundle\Controller\AbstractPaginationController;
-use Mazarini\ToolsBundle\Controller\AbstractController;
 use Mazarini\ToolsBundle\Data\Data;
 use Mazarini\ToolsBundle\Entity\EntityInterface;
 use Symfony\Component\Form\Form;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
 abstract class AbstractCrudController extends AbstractPaginationController
 {
-    public function __construct(RequestStack $requestStack, UrlGeneratorInterface $router, string $baseRoute)
-    {
-        parent::__construct($requestStack, $router, $baseRoute);
-    }
-
     /**
      * createEntityForm.
      *
@@ -46,34 +38,6 @@ abstract class AbstractCrudController extends AbstractPaginationController
     protected function createEntityForm(string $type, EntityInterface $entity = null, array $options = []): Form
     {
         return $this->container->get('form.factory')->createNamed('Entity', $type, $entity, $options);
-    }
-
-    protected function crudUrl(Data $data): AbstractController
-    {
-        if ($data->isSetEntity()) {
-            $id = $data->getEntity()->getId();
-            if (0 !== $id) {
-                $parameters = ['id' => $id];
-                foreach (['_edit', '_show', '_delete'] as $action) {
-                    $data->addLink(trim($action, '_'), $data->generateUrl($action, $parameters));
-                }
-            }
-        }
-        foreach (['_new', '_index'] as $action) {
-            $data->addLink($action, $action);
-        }
-
-        return $this;
-    }
-
-    protected function initUrl(Data $data): AbstractController
-    {
-        $this->listUrl($data, ['show', 'edit']);
-        $this->paginationUrl($data);
-        $this->crudUrl($data);
-        $data->addLink('new', $data->generateUrl('_new'), 'Create');
-
-        return $this;
     }
 
     public function editAction(Request $request, EntityInterface $entity, string $formTypeClass): Response
@@ -115,4 +79,31 @@ abstract class AbstractCrudController extends AbstractPaginationController
     }
 
     abstract protected function valid(EntityInterface $entity): bool;
+
+    protected function setNewUrl(Data $data): void
+    {
+        if ($data->isCrud()) {
+            $data->addLink('new', $data->generateUrl('_new', $this->getPageParameters()), 'Create');
+        }
+    }
+
+    /**
+     * getCrudAction.
+     *
+     * @return array<string,string>
+     */
+    protected function getCrudAction(): array
+    {
+        return ['_show' => 'Show', '_edit' => 'Edit', '_delete' => 'Delete'];
+    }
+
+    /**
+     * getListAction.
+     *
+     * @return array<string,string>
+     */
+    protected function getListAction(): array
+    {
+        return ['_show' => 'Show', '_edit' => 'Edit'];
+    }
 }

@@ -25,22 +25,14 @@ use App\Repository\UserRepository;
 use Mazarini\CrudBundle\Controller\AbstractCrudController;
 use Mazarini\ToolsBundle\Entity\EntityInterface;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
 /**
  * @Route("/user")
  */
 class UserController extends AbstractCrudController
 {
-    public function __construct(RequestStack $requestStack, UrlGeneratorInterface $router)
-    {
-        parent::__construct($requestStack, $router, 'user');
-        $this->twigFolder = 'user/';
-    }
-
     /**
      * @Route("/", name="user_index", methods={"GET"})
      */
