@@ -37,7 +37,9 @@ abstract class AbstractCrudController extends AbstractPaginationController
      */
     protected function createEntityForm(string $type, EntityInterface $entity = null, array $options = []): Form
     {
-        return $this->container->get('form.factory')->createNamed('Entity', $type, $entity, $options);
+        return $this->container
+            ->get('form.factory')
+            ->createNamed('Entity', $type, $entity, $options);
     }
 
     public function editAction(Request $request, EntityInterface $entity, string $formTypeClass): Response
@@ -45,7 +47,7 @@ abstract class AbstractCrudController extends AbstractPaginationController
         $form = $this->createEntityForm($formTypeClass, $entity);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid() && $this->valid($entity)) {
+        if ($form->isSubmitted() && $form->isValid() && $this->valid($entity, $form)) {
             $entityManager = $this->getDoctrine()->getManager();
             if ($entity->isNew()) {
                 $entityManager->persist($entity);
@@ -78,7 +80,10 @@ abstract class AbstractCrudController extends AbstractPaginationController
         return $this->redirect($this->data->generateUrl('_index'));
     }
 
-    abstract protected function valid(EntityInterface $entity): bool;
+    protected function valid(EntityInterface $entity, Form $form): bool {
+
+        return true;
+    }
 
     protected function setNewUrl(Data $data): void
     {

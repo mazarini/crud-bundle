@@ -23,7 +23,6 @@ use App\Entity\Five;
 use App\Form\FiveType;
 use App\Repository\FiveRepository;
 use Mazarini\CrudBundle\Controller\AbstractCrudController;
-use Mazarini\ToolsBundle\Entity\EntityInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -81,10 +80,5 @@ class FiveController extends AbstractCrudController
     public function delete(Request $request, Five $entity): Response
     {
         return $this->deleteAction($request, $entity);
-    }
-
-    protected function valid(EntityInterface $entity): bool
-    {
-        return true;
     }
 }

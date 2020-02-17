@@ -23,7 +23,6 @@ use App\Entity\Ten;
 use App\Form\TenType;
 use App\Repository\TenRepository;
 use Mazarini\CrudBundle\Controller\AbstractCrudController;
-use Mazarini\ToolsBundle\Entity\EntityInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -81,10 +80,5 @@ class TenCrudController extends AbstractCrudController
     public function delete(Request $request, Ten $entity): Response
     {
         return $this->deleteAction($request, $entity);
-    }
-
-    protected function valid(EntityInterface $entity): bool
-    {
-        return true;
     }
 }

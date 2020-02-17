@@ -23,7 +23,6 @@ use App\Entity\Zero;
 use App\Form\ZeroType;
 use App\Repository\ZeroRepository;
 use Mazarini\CrudBundle\Controller\AbstractCrudController;
-use Mazarini\ToolsBundle\Entity\EntityInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -81,10 +80,5 @@ class ZeroController extends AbstractCrudController
     public function delete(Request $request, Zero $entity): Response
     {
         return $this->deleteAction($request, $entity);
-    }
-
-    protected function valid(EntityInterface $entity): bool
-    {
-        return true;
     }
 }
