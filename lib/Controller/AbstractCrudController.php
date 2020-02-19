@@ -20,7 +20,7 @@
 namespace Mazarini\CrudBundle\Controller;
 
 use Mazarini\PaginationBundle\Controller\AbstractPaginationController;
-use Mazarini\ToolsBundle\Data\Data;
+use Mazarini\ToolsBundle\Controller\CrudTrait;
 use Mazarini\ToolsBundle\Entity\EntityInterface;
 use Symfony\Component\Form\Form;
 use Symfony\Component\HttpFoundation\Request;
@@ -28,6 +28,8 @@ use Symfony\Component\HttpFoundation\Response;
 
 abstract class AbstractCrudController extends AbstractPaginationController
 {
+    use CrudTrait;
+
     /**
      * createEntityForm.
      *
@@ -80,35 +82,8 @@ abstract class AbstractCrudController extends AbstractPaginationController
         return $this->redirect($this->data->generateUrl('_index'));
     }
 
-    protected function valid(EntityInterface $entity, Form $form): bool {
-
+    protected function valid(EntityInterface $entity, Form $form): bool
+    {
         return true;
-    }
-
-    protected function setNewUrl(Data $data): void
-    {
-        if ($data->isCrud()) {
-            $data->addLink('new', $data->generateUrl('_new', $this->getPageParameters()), 'Create');
-        }
-    }
-
-    /**
-     * getCrudAction.
-     *
-     * @return array<string,string>
-     */
-    protected function getCrudAction(): array
-    {
-        return ['_show' => 'Show', '_edit' => 'Edit', '_delete' => 'Delete'];
-    }
-
-    /**
-     * getListAction.
-     *
-     * @return array<string,string>
-     */
-    protected function getListAction(): array
-    {
-        return ['_show' => 'Show', '_edit' => 'Edit'];
     }
 }

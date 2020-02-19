@@ -1055,12 +1055,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mazarini/bootstrap-bundle.git",
-                "reference": "54f678e8c35fcf57b70acd80fd36ab2f10f0944e"
+                "reference": "c3ab14afac4074e232d197da63fc815e598ef97f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mazarini/bootstrap-bundle/zipball/54f678e8c35fcf57b70acd80fd36ab2f10f0944e",
-                "reference": "54f678e8c35fcf57b70acd80fd36ab2f10f0944e",
+                "url": "https://api.github.com/repos/mazarini/bootstrap-bundle/zipball/c3ab14afac4074e232d197da63fc815e598ef97f",
+                "reference": "c3ab14afac4074e232d197da63fc815e598ef97f",
                 "shasum": ""
             },
             "require": {
@@ -1069,8 +1069,13 @@
                 "ext-mbstring": "*",
                 "mazarini/tools-bundle": "^0.9|^1.0@dev",
                 "php": "^7.2|^8.0",
-                "symfony/flex": "^1.5",
-                "symfony/twig-bundle": "^4.4|^5.0"
+                "symfony/console": "^4.4|^5.0",
+                "symfony/dotenv": "^4.4|^5.0",
+                "symfony/flex": "^1.6",
+                "symfony/framework-bundle": "^4.4|^5.0",
+                "symfony/translation": "^4.4|^5.0",
+                "symfony/twig-bundle": "^4.4|^5.0",
+                "symfony/yaml": "^4.4|^5.0"
             },
             "conflict": {
                 "symfony/symfony": "*"
@@ -1114,7 +1119,7 @@
             "keywords": [
                 "symfony"
             ],
-            "time": "2020-02-15T15:51:25+00:00"
+            "time": "2020-02-18T19:00:32+00:00"
         },
         {
             "name": "mazarini/pagination-bundle",
@@ -1122,12 +1127,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mazarini/pagination-bundle.git",
-                "reference": "9570775d8e9944eb46f4e33f71fb0b2443c58cf7"
+                "reference": "3d7790fbc76a0474ca0d74b5a3847c99ae82fb7a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mazarini/pagination-bundle/zipball/9570775d8e9944eb46f4e33f71fb0b2443c58cf7",
-                "reference": "9570775d8e9944eb46f4e33f71fb0b2443c58cf7",
+                "url": "https://api.github.com/repos/mazarini/pagination-bundle/zipball/3d7790fbc76a0474ca0d74b5a3847c99ae82fb7a",
+                "reference": "3d7790fbc76a0474ca0d74b5a3847c99ae82fb7a",
                 "shasum": ""
             },
             "require": {
@@ -1191,7 +1196,7 @@
                 "pagination",
                 "symfony"
             ],
-            "time": "2020-02-16T17:24:25+00:00"
+            "time": "2020-02-19T09:47:17+00:00"
         },
         {
             "name": "mazarini/tools-bundle",
@@ -1199,12 +1204,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mazarini/tools-bundle.git",
-                "reference": "5ab0e1a38810492242c45f2fe3994092415798a2"
+                "reference": "63765312fe0d4afdf1c47fb5ddb2dc1d1e203478"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mazarini/tools-bundle/zipball/5ab0e1a38810492242c45f2fe3994092415798a2",
-                "reference": "5ab0e1a38810492242c45f2fe3994092415798a2",
+                "url": "https://api.github.com/repos/mazarini/tools-bundle/zipball/63765312fe0d4afdf1c47fb5ddb2dc1d1e203478",
+                "reference": "63765312fe0d4afdf1c47fb5ddb2dc1d1e203478",
                 "shasum": ""
             },
             "require": {
@@ -1212,15 +1217,21 @@
                 "ext-iconv": "*",
                 "ext-mbstring": "*",
                 "php": "^7.2|^8.0",
-                "symfony/flex": "^1.6"
+                "symfony/console": "^4.4|^5.0",
+                "symfony/dotenv": "^4.4|^5.0",
+                "symfony/flex": "^1.6",
+                "symfony/framework-bundle": "^4.4|^5.0",
+                "symfony/translation": "^4.4|^5.0",
+                "symfony/yaml": "^4.4|^5.0"
             },
             "conflict": {
                 "symfony/symfony": "*"
             },
             "require-dev": {
-                "doctrine/doctrine-bundle": "*",
-                "doctrine/orm": "*",
+                "doctrine/doctrine-bundle": "^2.0",
+                "doctrine/orm": "^2.7",
                 "laminas/laminas-code": "^3.4",
+                "mazarini/bootstrap-bundle": "^0.9|^1.0dev",
                 "mazarini/package": "^1.1",
                 "mazarini/test-bundle": "^0.9|^1.0dev",
                 "symfony/debug-pack": "^1.0",
@@ -1259,7 +1270,7 @@
                 "symfony",
                 "toolset"
             ],
-            "time": "2020-02-14T16:30:23+00:00"
+            "time": "2020-02-19T07:36:00+00:00"
         },
         {
             "name": "ocramius/package-versions",
@@ -3911,6 +3922,83 @@
             "time": "2019-11-18T17:27:11+00:00"
         },
         {
+            "name": "symfony/translation",
+            "version": "v5.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/translation.git",
+                "reference": "28e1054f1ea26c63762d9260c37cb1056ea62dbb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/translation/zipball/28e1054f1ea26c63762d9260c37cb1056ea62dbb",
+                "reference": "28e1054f1ea26c63762d9260c37cb1056ea62dbb",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2.5",
+                "symfony/polyfill-mbstring": "~1.0",
+                "symfony/translation-contracts": "^2"
+            },
+            "conflict": {
+                "symfony/config": "<4.4",
+                "symfony/dependency-injection": "<5.0",
+                "symfony/http-kernel": "<5.0",
+                "symfony/twig-bundle": "<5.0",
+                "symfony/yaml": "<4.4"
+            },
+            "provide": {
+                "symfony/translation-implementation": "2.0"
+            },
+            "require-dev": {
+                "psr/log": "~1.0",
+                "symfony/config": "^4.4|^5.0",
+                "symfony/console": "^4.4|^5.0",
+                "symfony/dependency-injection": "^5.0",
+                "symfony/finder": "^4.4|^5.0",
+                "symfony/http-kernel": "^5.0",
+                "symfony/intl": "^4.4|^5.0",
+                "symfony/service-contracts": "^1.1.2|^2",
+                "symfony/yaml": "^4.4|^5.0"
+            },
+            "suggest": {
+                "psr/log-implementation": "To use logging capability in translator",
+                "symfony/config": "",
+                "symfony/yaml": ""
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Translation\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Translation Component",
+            "homepage": "https://symfony.com",
+            "time": "2020-01-21T08:40:24+00:00"
+        },
+        {
             "name": "symfony/translation-contracts",
             "version": "v2.0.1",
             "source": {
@@ -4819,177 +4907,6 @@
             "time": "2019-10-24T07:13:31+00:00"
         },
         {
-            "name": "laminas/laminas-code",
-            "version": "3.4.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/laminas/laminas-code.git",
-                "reference": "1cb8f203389ab1482bf89c0e70a04849bacd7766"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/laminas/laminas-code/zipball/1cb8f203389ab1482bf89c0e70a04849bacd7766",
-                "reference": "1cb8f203389ab1482bf89c0e70a04849bacd7766",
-                "shasum": ""
-            },
-            "require": {
-                "laminas/laminas-eventmanager": "^2.6 || ^3.0",
-                "laminas/laminas-zendframework-bridge": "^1.0",
-                "php": "^7.1"
-            },
-            "conflict": {
-                "phpspec/prophecy": "<1.9.0"
-            },
-            "replace": {
-                "zendframework/zend-code": "self.version"
-            },
-            "require-dev": {
-                "doctrine/annotations": "^1.7",
-                "ext-phar": "*",
-                "laminas/laminas-coding-standard": "^1.0",
-                "laminas/laminas-stdlib": "^2.7 || ^3.0",
-                "phpunit/phpunit": "^7.5.16 || ^8.4"
-            },
-            "suggest": {
-                "doctrine/annotations": "Doctrine\\Common\\Annotations >=1.0 for annotation features",
-                "laminas/laminas-stdlib": "Laminas\\Stdlib component"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.4.x-dev",
-                    "dev-develop": "3.5.x-dev",
-                    "dev-dev-4.0": "4.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Laminas\\Code\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "description": "Extensions to the PHP Reflection API, static code scanning, and code generation",
-            "homepage": "https://laminas.dev",
-            "keywords": [
-                "code",
-                "laminas"
-            ],
-            "time": "2019-12-31T16:28:24+00:00"
-        },
-        {
-            "name": "laminas/laminas-eventmanager",
-            "version": "3.2.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/laminas/laminas-eventmanager.git",
-                "reference": "ce4dc0bdf3b14b7f9815775af9dfee80a63b4748"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/laminas/laminas-eventmanager/zipball/ce4dc0bdf3b14b7f9815775af9dfee80a63b4748",
-                "reference": "ce4dc0bdf3b14b7f9815775af9dfee80a63b4748",
-                "shasum": ""
-            },
-            "require": {
-                "laminas/laminas-zendframework-bridge": "^1.0",
-                "php": "^5.6 || ^7.0"
-            },
-            "replace": {
-                "zendframework/zend-eventmanager": "self.version"
-            },
-            "require-dev": {
-                "athletic/athletic": "^0.1",
-                "container-interop/container-interop": "^1.1.0",
-                "laminas/laminas-coding-standard": "~1.0.0",
-                "laminas/laminas-stdlib": "^2.7.3 || ^3.0",
-                "phpunit/phpunit": "^5.7.27 || ^6.5.8 || ^7.1.2"
-            },
-            "suggest": {
-                "container-interop/container-interop": "^1.1.0, to use the lazy listeners feature",
-                "laminas/laminas-stdlib": "^2.7.3 || ^3.0, to use the FilterChain feature"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.2-dev",
-                    "dev-develop": "3.3-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Laminas\\EventManager\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "description": "Trigger and listen to events within a PHP application",
-            "homepage": "https://laminas.dev",
-            "keywords": [
-                "event",
-                "eventmanager",
-                "events",
-                "laminas"
-            ],
-            "time": "2019-12-31T16:44:52+00:00"
-        },
-        {
-            "name": "laminas/laminas-zendframework-bridge",
-            "version": "1.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/laminas/laminas-zendframework-bridge.git",
-                "reference": "0fb9675b84a1666ab45182b6c5b29956921e818d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/laminas/laminas-zendframework-bridge/zipball/0fb9675b84a1666ab45182b6c5b29956921e818d",
-                "reference": "0fb9675b84a1666ab45182b6c5b29956921e818d",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^5.6 || ^7.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^5.7 || ^6.5 || ^7.5 || ^8.1",
-                "squizlabs/php_codesniffer": "^3.5"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0.x-dev",
-                    "dev-develop": "1.1.x-dev"
-                },
-                "laminas": {
-                    "module": "Laminas\\ZendFrameworkBridge"
-                }
-            },
-            "autoload": {
-                "files": [
-                    "src/autoload.php"
-                ],
-                "psr-4": {
-                    "Laminas\\ZendFrameworkBridge\\": "src//"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "description": "Alias legacy ZF class names to Laminas Project equivalents.",
-            "keywords": [
-                "ZendFramework",
-                "autoloading",
-                "laminas",
-                "zf"
-            ],
-            "time": "2020-01-07T22:58:31+00:00"
-        },
-        {
             "name": "mazarini/package",
             "version": "v1.1.0",
             "source": {
@@ -5056,22 +4973,26 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mazarini/test-bundle.git",
-                "reference": "f7804340414033882316017f673d5e15b5baf275"
+                "reference": "142641dbc75355a3b5bbfba95b2623a4a320a13e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mazarini/test-bundle/zipball/f7804340414033882316017f673d5e15b5baf275",
-                "reference": "f7804340414033882316017f673d5e15b5baf275",
+                "url": "https://api.github.com/repos/mazarini/test-bundle/zipball/142641dbc75355a3b5bbfba95b2623a4a320a13e",
+                "reference": "142641dbc75355a3b5bbfba95b2623a4a320a13e",
                 "shasum": ""
             },
             "require": {
                 "ext-ctype": "*",
                 "ext-iconv": "*",
                 "ext-mbstring": "*",
-                "laminas/laminas-code": "^3.4",
                 "mazarini/tools-bundle": "^0.9|^1.0@dev",
                 "php": "^7.2|^8.0",
-                "symfony/flex": "^1.6"
+                "symfony/console": "^4.4|^5.0",
+                "symfony/dotenv": "^4.4|^5.0",
+                "symfony/flex": "^1.6",
+                "symfony/framework-bundle": "^4.4|^5.0",
+                "symfony/translation": "^4.4|^5.0",
+                "symfony/yaml": "^4.4|^5.0"
             },
             "conflict": {
                 "symfony/symfony": "*"
@@ -5079,6 +5000,7 @@
             "require-dev": {
                 "doctrine/doctrine-bundle": "^2.0",
                 "doctrine/orm": "^2.7",
+                "mazarini/bootstrap-bundle": "^0.9|^1.0@dev",
                 "mazarini/package": "^1.1",
                 "symfony/debug-pack": "^1.0",
                 "symfony/maker-bundle": "^1.14",
@@ -5116,7 +5038,7 @@
                 "symfony",
                 "test"
             ],
-            "time": "2020-02-14T16:26:10+00:00"
+            "time": "2020-02-19T08:38:19+00:00"
         },
         {
             "name": "monolog/monolog",
