@@ -1055,12 +1055,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mazarini/bootstrap-bundle.git",
-                "reference": "c3ab14afac4074e232d197da63fc815e598ef97f"
+                "reference": "e3c13ca319d4d7e0d28612338d4bd88eaa837f90"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mazarini/bootstrap-bundle/zipball/c3ab14afac4074e232d197da63fc815e598ef97f",
-                "reference": "c3ab14afac4074e232d197da63fc815e598ef97f",
+                "url": "https://api.github.com/repos/mazarini/bootstrap-bundle/zipball/e3c13ca319d4d7e0d28612338d4bd88eaa837f90",
+                "reference": "e3c13ca319d4d7e0d28612338d4bd88eaa837f90",
                 "shasum": ""
             },
             "require": {
@@ -1119,7 +1119,7 @@
             "keywords": [
                 "symfony"
             ],
-            "time": "2020-02-18T19:00:32+00:00"
+            "time": "2020-02-20T08:04:24+00:00"
         },
         {
             "name": "mazarini/pagination-bundle",
@@ -1127,12 +1127,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mazarini/pagination-bundle.git",
-                "reference": "3d7790fbc76a0474ca0d74b5a3847c99ae82fb7a"
+                "reference": "da12a8c1b31f060aa88468139c1b140e45386cf8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mazarini/pagination-bundle/zipball/3d7790fbc76a0474ca0d74b5a3847c99ae82fb7a",
-                "reference": "3d7790fbc76a0474ca0d74b5a3847c99ae82fb7a",
+                "url": "https://api.github.com/repos/mazarini/pagination-bundle/zipball/da12a8c1b31f060aa88468139c1b140e45386cf8",
+                "reference": "da12a8c1b31f060aa88468139c1b140e45386cf8",
                 "shasum": ""
             },
             "require": {
@@ -1196,7 +1196,7 @@
                 "pagination",
                 "symfony"
             ],
-            "time": "2020-02-19T09:47:17+00:00"
+            "time": "2020-02-20T12:29:42+00:00"
         },
         {
             "name": "mazarini/tools-bundle",
@@ -1204,12 +1204,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mazarini/tools-bundle.git",
-                "reference": "63765312fe0d4afdf1c47fb5ddb2dc1d1e203478"
+                "reference": "8ca1b977f2d531545086419bfacd5e7ef77ce9db"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mazarini/tools-bundle/zipball/63765312fe0d4afdf1c47fb5ddb2dc1d1e203478",
-                "reference": "63765312fe0d4afdf1c47fb5ddb2dc1d1e203478",
+                "url": "https://api.github.com/repos/mazarini/tools-bundle/zipball/8ca1b977f2d531545086419bfacd5e7ef77ce9db",
+                "reference": "8ca1b977f2d531545086419bfacd5e7ef77ce9db",
                 "shasum": ""
             },
             "require": {
@@ -1270,7 +1270,7 @@
                 "symfony",
                 "toolset"
             ],
-            "time": "2020-02-19T07:36:00+00:00"
+            "time": "2020-02-20T10:10:58+00:00"
         },
         {
             "name": "ocramius/package-versions",
@@ -4973,12 +4973,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mazarini/test-bundle.git",
-                "reference": "142641dbc75355a3b5bbfba95b2623a4a320a13e"
+                "reference": "59eb96e6f88152e667d10477795f913288cc0dfa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mazarini/test-bundle/zipball/142641dbc75355a3b5bbfba95b2623a4a320a13e",
-                "reference": "142641dbc75355a3b5bbfba95b2623a4a320a13e",
+                "url": "https://api.github.com/repos/mazarini/test-bundle/zipball/59eb96e6f88152e667d10477795f913288cc0dfa",
+                "reference": "59eb96e6f88152e667d10477795f913288cc0dfa",
                 "shasum": ""
             },
             "require": {
@@ -5038,7 +5038,7 @@
                 "symfony",
                 "test"
             ],
-            "time": "2020-02-19T08:38:19+00:00"
+            "time": "2020-02-20T08:26:15+00:00"
         },
         {
             "name": "monolog/monolog",
