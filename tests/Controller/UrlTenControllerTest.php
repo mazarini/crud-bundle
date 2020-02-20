@@ -55,8 +55,6 @@ class UrlTenControllerTest extends WebTestCase
      */
     public function getUrls(): \Traversable
     {
-        yield ['/ten', 'GET', 301];
-        yield ['/ten/', 'GET', 302];
         yield ['/ten/page-0.html', 'GET', 404];
         yield ['/ten/page-1.html'];
         yield ['/ten/page-6.html'];

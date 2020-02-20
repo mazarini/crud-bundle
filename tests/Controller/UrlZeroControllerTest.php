@@ -55,8 +55,6 @@ class UrlZeroControllerTest extends WebTestCase
      */
     public function getUrls(): \Traversable
     {
-        yield ['/zero', 'GET', 301];
-        yield ['/zero/', 'GET', 302];
         yield ['/zero/page-0.html', 'GET', 404];
         yield ['/zero/page-1.html'];
         yield ['/zero/page-2.html', 'GET', 302];
