@@ -22,7 +22,7 @@ namespace App\Controller;
 use App\Entity\Ten;
 use App\Form\TenType;
 use App\Repository\TenRepository;
-use Mazarini\CrudBundle\Controller\AbstractCrudController;
+use Mazarini\CrudBundle\Controller\CrudControllerAbstract;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -30,7 +30,7 @@ use Symfony\Component\Routing\Annotation\Route;
 /**
  * @Route("/ten")
  */
-class TenCrudController extends AbstractCrudController
+class TenCrudController extends CrudControllerAbstract
 {
     /**
      * @Route("/", name="ten_index", methods={"GET"})

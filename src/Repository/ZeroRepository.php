@@ -21,14 +21,14 @@ namespace App\Repository;
 
 use App\Entity\Zero;
 use Doctrine\Common\Persistence\ManagerRegistry;
-use Mazarini\PaginationBundle\Repository\AbstractRepository;
+use Mazarini\PaginationBundle\Repository\EntityRepositoryAbstract;
 
 /**
  * @method Zero|null find($id, $lockMode = null, $lockVersion = null)
  * @method Zero|null findOneBy(array $criteria, array $orderBy = null)
  * @method Zero[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class ZeroRepository extends AbstractRepository
+class ZeroRepository extends EntityRepositoryAbstract
 {
     public function __construct(ManagerRegistry $registry)
     {

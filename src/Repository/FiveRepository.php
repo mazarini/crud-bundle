@@ -21,14 +21,14 @@ namespace App\Repository;
 
 use App\Entity\Five;
 use Doctrine\Common\Persistence\ManagerRegistry;
-use Mazarini\PaginationBundle\Repository\AbstractRepository;
+use Mazarini\PaginationBundle\Repository\EntityRepositoryAbstract;
 
 /**
  * @method Five|null find($id, $lockMode = null, $lockVersion = null)
  * @method Five|null findOneBy(array $criteria, array $orderBy = null)
  * @method Five[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class FiveRepository extends AbstractRepository
+class FiveRepository extends EntityRepositoryAbstract
 {
     public function __construct(ManagerRegistry $registry)
     {

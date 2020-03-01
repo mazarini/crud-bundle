@@ -22,7 +22,7 @@ namespace App\Controller;
 use App\Entity\Five;
 use App\Form\FiveType;
 use App\Repository\FiveRepository;
-use Mazarini\CrudBundle\Controller\AbstractCrudController;
+use Mazarini\CrudBundle\Controller\CrudControllerAbstract;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -30,7 +30,7 @@ use Symfony\Component\Routing\Annotation\Route;
 /**
  * @Route("/five")
  */
-class FiveController extends AbstractCrudController
+class FiveController extends CrudControllerAbstract
 {
     /**
      * @Route("/", name="five_index", methods={"GET"})

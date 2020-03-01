@@ -4,7 +4,7 @@
 
 {% block first_bar_container %}
 	<div class="list-group">
-		<a href="{{ path('user_index') }}" class="list-group-item list-group-item-action">
+		<a href="path('user_index')" class="list-group-item list-group-item-action">
 			User
 		</a>
 	</div>
@@ -15,17 +15,22 @@
 	</div>
 	<div class="list-group">
 		<a href="{{ path('five_index') }}" class="list-group-item list-group-item-action">
-			Five pages
+			Crud five pages
 		</a>
 	</div>
 	<div class="list-group">
 		<a href="{{ path('ten_index') }}" class="list-group-item list-group-item-action">
-			Ten pages
+			Crud ten pages
+		</a>
+	</div>
+	<div class="list-group">
+		<a href="{{ path('ten_page_index') }}" class="list-group-item list-group-item-action">
+			Paginnation ten pages
 		</a>
 	</div>
 {% endblock first_bar_container %}
 {% block static %}
 	{% if data.isSetEntity %}
-		{% include '@MazariniCrud/_delete_form.html.twig' with {'modal_id': 'modalDeleteId'} %}
+		{% include '@MazariniBootstrap/crud/_delete_form.html.twig' with {'modal_id': 'modalDeleteId'} %}
 	{% endif %}
 {% endblock static %}

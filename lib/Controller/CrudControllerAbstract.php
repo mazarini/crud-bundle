@@ -19,16 +19,45 @@
 
 namespace Mazarini\CrudBundle\Controller;
 
-use Mazarini\PaginationBundle\Controller\AbstractPaginationController;
-use Mazarini\ToolsBundle\Controller\CrudTrait;
+use Mazarini\PaginationBundle\Repository\EntityRepositoryAbstract;
+use Mazarini\ToolsBundle\Controller\AbstractController;
 use Mazarini\ToolsBundle\Entity\EntityInterface;
 use Symfony\Component\Form\Form;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-abstract class AbstractCrudController extends AbstractPaginationController
+abstract class CrudControllerAbstract extends AbstractController
 {
     use CrudTrait;
+
+    protected function IndexAction(): Response
+    {
+        $parameters = $this->getPageParameters();
+        $parameters['page'] = 1;
+
+        return $this->redirect($this->data->generateUrl('_page', $parameters), Response::HTTP_MOVED_PERMANENTLY);
+    }
+
+    protected function PageAction(EntityRepositoryAbstract $EmptyRowRepository, int $page): Response
+    {
+        $this->data->setPagination($EmptyRowRepository->getPage($page));
+
+        if ($page === $this->data->getPagination()->getCurrentPage()) {
+            return $this->dataRender('index.html.twig');
+        }
+
+        $parameters = $this->getPageParameters();
+        $parameters['page'] = $this->data->getPagination()->getCurrentPage();
+
+        return $this->redirect($this->data->generateUrl('_page', $parameters));
+    }
+
+    protected function showAction(EntityInterface $entity): Response
+    {
+        $this->data->setEntity($entity);
+
+        return $this->dataRender('show.html.twig', []);
+    }
 
     /**
      * createEntityForm.

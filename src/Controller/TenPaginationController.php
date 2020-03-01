@@ -21,14 +21,15 @@ namespace App\Controller;
 
 use App\Entity\Ten;
 use App\Repository\TenRepository;
-use Mazarini\PaginationBundle\Controller\AbstractPaginationController;
+use Mazarini\CrudBundle\Controller\CrudControllerAbstract;
+use Mazarini\ToolsBundle\Data\Data;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
  * @Route("/")
  */
-class TenPaginationController extends AbstractPaginationController
+class TenPaginationController extends CrudControllerAbstract
 {
     /**
      * @Route("/", name="ten_page_index", methods={"GET"})
@@ -52,5 +53,39 @@ class TenPaginationController extends AbstractPaginationController
     public function show(Ten $entity): Response
     {
         return $this->showAction($entity);
+    }
+
+    protected function getBaseRoute(): string
+    {
+        return 'ten_page';
+    }
+
+    protected function getTwigFolder(): string
+    {
+        return 'ten/';
+    }
+
+    /**
+     * getCrudAction.
+     *
+     * @return array<string,string>
+     */
+    protected function getCrudAction(): array
+    {
+        return ['_show' => 'Afficher'];
+    }
+
+    /**
+     * getListAction.
+     *
+     * @return array<string,string>
+     */
+    protected function getListAction(): array
+    {
+        return ['_show' => 'Afficher'];
+    }
+
+    protected function setNewUrl(Data $data): void
+    {
     }
 }
