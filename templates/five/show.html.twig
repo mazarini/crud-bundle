@@ -1,20 +1,40 @@
-{% extends '@MazariniBootstrap/crud/show.html.twig' %}
+{% extends 'layout.html.twig' %}
 
 {% block title %}
-	Five
+	Ten pages #{{ data.entity.id }}
 {% endblock title %}
 
-{% block view_content %}
-	<tr>
-		<th>Id</th>
-		<td>{{ data.entity.id }}</td>
-	</tr>
-	<tr>
-		<th>Col1</th>
-		<td>{{ data.entity.col1 }}</td>
-	</tr>
-	<tr>
-		<th>Col2</th>
-		<td>{{ data.entity.col2 }}</td>
-	</tr>
-{% endblock view_content %}
+{% block content %}
+
+	{% embed '@MazariniBootstrap/crud/_view.html.twig' with {'data': data } %}
+
+		{% block content %}
+			<tr>
+				<th>Id</th>
+				<td>{{ data.entity.id }}</td>
+			</tr>
+			<tr>
+				<th>Col1</th>
+				<td>{{ data.entity.col1 }}</td>
+			</tr>
+			<tr>
+				<th>Col2</th>
+				<td>{{ data.entity.col2 }}</td>
+			</tr>
+		{% endblock content %}
+
+		{% block edit %}
+			{{ parent() }}
+		{% endblock edit %}
+
+		{% block delete %}
+			{{ parent() }}
+		{% endblock delete %}
+
+		{% block back %}
+			{{ parent() }}
+		{% endblock back %}
+
+	{% endembed %}
+
+{% endblock content %}

@@ -1,5 +1,25 @@
-{% extends '@MazariniBootstrap/crud/edit.html.twig' %}
+{% extends 'layout.html.twig' %}
 
 {% block title %}
-	Edit Example
+	Modify Ten #{{ data.entity.id }}
 {% endblock %}
+
+{% block content %}
+
+	{% embed '@MazariniBootstrap/crud/_form.html.twig' with {'data': data } %}
+
+		{% block widget %}
+			{{ parent() }}
+		{% endblock widget %}
+
+		{% block cancel %}
+			{{ parent() }}
+		{% endblock cancel %}
+
+		{% block validate %}
+			{{ parent() }}
+		{% endblock validate %}
+
+	{% endembed %}
+
+{% endblock content %}
