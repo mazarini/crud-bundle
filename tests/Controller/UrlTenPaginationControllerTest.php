@@ -55,13 +55,14 @@ class UrlTenPaginationControllerTest extends WebTestCase
      */
     public function getUrls(): \Traversable
     {
-        yield ['/page-0.html', 'GET', 404];
-        yield ['/page-1.html'];
-        yield ['/page-3.html'];
-        yield ['/page-5.html'];
-        yield ['/page-6.html'];
-        yield ['/new.html', 'GET', 404];
-        yield ['/show-1.html', 'GET', 200];
-        yield ['/edit-1.html', 'GET', 404];
+        yield ['/pagination/page-0.html', 'GET', 404];
+        yield ['/pagination/page-1.html'];
+        yield ['/pagination/page-3.html'];
+        yield ['/pagination/page-5.html'];
+        yield ['/pagination/page-10.html'];
+        yield ['/pagination/page-11.html', 'GET', 302];
+        yield ['/pagination/new.html', 'GET', 404];
+        yield ['/pagination/show-1.html', 'GET', 200];
+        yield ['/pagination/edit-1.html', 'GET', 404];
     }
 }

@@ -68,7 +68,8 @@ class HomeControllerTest extends WebTestCase
     public function getUrls(): \Traversable
     {
         yield [''];
-        yield ['/zero'];
+        yield ['/admin'];
+        yield ['/admin/zero'];
         yield ['/five'];
         yield ['/ten'];
     }
