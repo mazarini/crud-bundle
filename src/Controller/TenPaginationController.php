@@ -22,12 +22,11 @@ namespace App\Controller;
 use App\Entity\Ten;
 use App\Repository\TenRepository;
 use Mazarini\CrudBundle\Controller\CrudControllerAbstract;
-use Mazarini\ToolsBundle\Data\Data;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/")
+ * @Route("/pagination")
  */
 class TenPaginationController extends CrudControllerAbstract
 {
@@ -65,27 +64,8 @@ class TenPaginationController extends CrudControllerAbstract
         return 'ten/';
     }
 
-    /**
-     * getCrudAction.
-     *
-     * @return array<string,string>
-     */
-    protected function getCrudAction(): array
+    protected function beforeRender(): void
     {
-        return ['_show' => 'Afficher'];
-    }
-
-    /**
-     * getListAction.
-     *
-     * @return array<string,string>
-     */
-    protected function getListAction(): array
-    {
-        return ['_show' => 'Afficher'];
-    }
-
-    protected function setNewUrl(Data $data): void
-    {
+        $this->parameters['generator'] = $this->linkGenerator;
     }
 }

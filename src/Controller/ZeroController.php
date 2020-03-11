@@ -28,7 +28,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/zero")
+ * @Route("/admin/zero")
  */
 class ZeroController extends CrudControllerAbstract
 {

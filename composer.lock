@@ -1055,12 +1055,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mazarini/bootstrap-bundle.git",
-                "reference": "e3c13ca319d4d7e0d28612338d4bd88eaa837f90"
+                "reference": "9d033c626e220c0a83dc3726619d89d92aee4ead"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mazarini/bootstrap-bundle/zipball/e3c13ca319d4d7e0d28612338d4bd88eaa837f90",
-                "reference": "e3c13ca319d4d7e0d28612338d4bd88eaa837f90",
+                "url": "https://api.github.com/repos/mazarini/bootstrap-bundle/zipball/9d033c626e220c0a83dc3726619d89d92aee4ead",
+                "reference": "9d033c626e220c0a83dc3726619d89d92aee4ead",
                 "shasum": ""
             },
             "require": {
@@ -1084,6 +1084,7 @@
                 "doctrine/doctrine-bundle": "*",
                 "doctrine/orm": "*",
                 "mazarini/package": "^1.0",
+                "mazarini/pagination-bundle": "^0.9|^1.0@dev",
                 "mazarini/test-bundle": "^0.9|^1.0@dev",
                 "symfony/debug-pack": "^1.0",
                 "symfony/maker-bundle": "^1.14",
@@ -1119,7 +1120,7 @@
             "keywords": [
                 "symfony"
             ],
-            "time": "2020-02-20T08:04:24+00:00"
+            "time": "2020-03-10T11:02:35+00:00"
         },
         {
             "name": "mazarini/pagination-bundle",
@@ -1127,12 +1128,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mazarini/pagination-bundle.git",
-                "reference": "10ca9553a8ae476b27317ec01661df36a1d636de"
+                "reference": "af9e5d450a4a6e2f0fa046772ecd5422c0176a83"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mazarini/pagination-bundle/zipball/10ca9553a8ae476b27317ec01661df36a1d636de",
-                "reference": "10ca9553a8ae476b27317ec01661df36a1d636de",
+                "url": "https://api.github.com/repos/mazarini/pagination-bundle/zipball/af9e5d450a4a6e2f0fa046772ecd5422c0176a83",
+                "reference": "af9e5d450a4a6e2f0fa046772ecd5422c0176a83",
                 "shasum": ""
             },
             "require": {
@@ -1196,7 +1197,7 @@
                 "pagination",
                 "symfony"
             ],
-            "time": "2020-02-29T12:47:02+00:00"
+            "time": "2020-03-10T13:32:40+00:00"
         },
         {
             "name": "mazarini/tools-bundle",
@@ -1204,12 +1205,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mazarini/tools-bundle.git",
-                "reference": "8348efabdf366615b8c14147914d697b060d0842"
+                "reference": "d89676c5895bd803b33c1f68aa32a6021e9edbff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mazarini/tools-bundle/zipball/8348efabdf366615b8c14147914d697b060d0842",
-                "reference": "8348efabdf366615b8c14147914d697b060d0842",
+                "url": "https://api.github.com/repos/mazarini/tools-bundle/zipball/d89676c5895bd803b33c1f68aa32a6021e9edbff",
+                "reference": "d89676c5895bd803b33c1f68aa32a6021e9edbff",
                 "shasum": ""
             },
             "require": {
@@ -1270,7 +1271,7 @@
                 "symfony",
                 "toolset"
             ],
-            "time": "2020-02-29T13:12:11+00:00"
+            "time": "2020-03-11T17:05:09+00:00"
         },
         {
             "name": "ocramius/package-versions",
@@ -4671,16 +4672,16 @@
     "packages-dev": [
         {
             "name": "dama/doctrine-test-bundle",
-            "version": "v6.3.1",
+            "version": "v6.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmaicher/doctrine-test-bundle.git",
-                "reference": "13eaeacf5bda4fd716c5d6d8ec6bf7bac89d3947"
+                "reference": "06932e828b4e8ed8655b9b64ae30428e048b616e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmaicher/doctrine-test-bundle/zipball/13eaeacf5bda4fd716c5d6d8ec6bf7bac89d3947",
-                "reference": "13eaeacf5bda4fd716c5d6d8ec6bf7bac89d3947",
+                "url": "https://api.github.com/repos/dmaicher/doctrine-test-bundle/zipball/06932e828b4e8ed8655b9b64ae30428e048b616e",
+                "reference": "06932e828b4e8ed8655b9b64ae30428e048b616e",
                 "shasum": ""
             },
             "require": {
@@ -4691,7 +4692,7 @@
             },
             "require-dev": {
                 "phpstan/phpstan": "^0.12",
-                "phpunit/phpunit": "^7.0 || ^8.0",
+                "phpunit/phpunit": "^7.0 || ^8.0 || ^9.0",
                 "symfony/phpunit-bridge": "^4.3 || ^5.0",
                 "symfony/yaml": "^3.4 || ^4.3 || ^5.0"
             },
@@ -4724,7 +4725,7 @@
                 "symfony",
                 "tests"
             ],
-            "time": "2019-12-09T22:53:03+00:00"
+            "time": "2020-03-02T20:42:23+00:00"
         },
         {
             "name": "doctrine/data-fixtures",
@@ -4974,12 +4975,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mazarini/test-bundle.git",
-                "reference": "d44492ee8897e73b1a65f6e087c540791800fbe3"
+                "reference": "c8f61da865b68c82e91eacdf6fb85996e6d5edf5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mazarini/test-bundle/zipball/d44492ee8897e73b1a65f6e087c540791800fbe3",
-                "reference": "d44492ee8897e73b1a65f6e087c540791800fbe3",
+                "url": "https://api.github.com/repos/mazarini/test-bundle/zipball/c8f61da865b68c82e91eacdf6fb85996e6d5edf5",
+                "reference": "c8f61da865b68c82e91eacdf6fb85996e6d5edf5",
                 "shasum": ""
             },
             "require": {
@@ -5046,7 +5047,7 @@
                 "symfony",
                 "test"
             ],
-            "time": "2020-02-29T19:15:49+00:00"
+            "time": "2020-03-11T17:16:29+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -5474,16 +5475,16 @@
         },
         {
             "name": "symfony/maker-bundle",
-            "version": "v1.14.3",
+            "version": "v1.14.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/maker-bundle.git",
-                "reference": "c864e7f9b8d1e1f5f60acc3beda11299f637aded"
+                "reference": "bc4df88792fbaaeb275167101dc714218475db5f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/maker-bundle/zipball/c864e7f9b8d1e1f5f60acc3beda11299f637aded",
-                "reference": "c864e7f9b8d1e1f5f60acc3beda11299f637aded",
+                "url": "https://api.github.com/repos/symfony/maker-bundle/zipball/bc4df88792fbaaeb275167101dc714218475db5f",
+                "reference": "bc4df88792fbaaeb275167101dc714218475db5f",
                 "shasum": ""
             },
             "require": {
@@ -5538,7 +5539,7 @@
                 "scaffold",
                 "scaffolding"
             ],
-            "time": "2019-11-07T00:56:03+00:00"
+            "time": "2020-03-04T13:57:29+00:00"
         },
         {
             "name": "symfony/monolog-bridge",
