@@ -1,0 +1,18 @@
+{# lib/Resources/views/modal/modal.html.twig #}
+
+{% use '@MazariniBootstrap/button/close.html.twig' %}
+
+{% block header_container %}
+    <div class="modal-header">
+        {% block header %}
+            {% block title_container %}
+                <h5 class="modal-title">
+                    {% block title %}{% endblock title %}
+                </h5>
+            {% endblock title_container %}
+            {% block button_close %}
+                {{ parent() }}
+            {% endblock button_close %}
+        {% endblock header %}
+    </div>
+{% endblock header_container %}

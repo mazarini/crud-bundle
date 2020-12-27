@@ -1,0 +1,32 @@
+{% extends '@MazariniTest/step/layout.html.twig' %}
+
+{% block content %}
+	{{ dump(data) }}
+	<table class="table">
+		<tr>
+			<td>link('Test 1', 'step_home_step', {'step': 'foo'}) :</td>
+			<td>{{ dump(link('Test 1', 'step_home_step', {'step': 'foo'})) }}</td>
+		</tr>
+		<tr>
+			<td>link('Test 2', '_home_step', {'step': 'foo'}) :</td>
+			<td>{{ dump(link('Test 2', '_home_step', {'step': 'foo'})) }}</td>
+		</tr>
+		<tr>
+			<td>linkEntity('FAKE_view',entityFactory(1)) :</td>
+			<td>{{ dump(entityLink('Test 3','FAKE_view',entityFactory(1))) }}</td>
+		</tr>
+		<tr>
+			<td>link('Test 1', 'FAKE_index') :</td>
+			<td>{{ dump(link('Test 4', 'FAKE_index')) }}</td>
+		</tr>
+		<tr>
+			<td>childLink('Test 5', 'FAKE_index') :</td>
+			<td>{{ dump(childLink('Test 1', 'FAKE_index')) }}</td>
+		</tr>
+		<tr>
+			<td>linkPage('Test 6',1,'page 1') :</td>
+			<td>{{ dump(pageLink(1,'page 1')) }}</td>
+		</tr>
+	</table>
+	{{ dump(linkExtension) }}
+{% endblock %}

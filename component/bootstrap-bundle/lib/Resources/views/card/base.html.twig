@@ -1,0 +1,19 @@
+{# lib/Resources/views/card/base.html.twig #}
+
+{% use '@MazariniBootstrap/card/header.html.twig' %}
+{% use '@MazariniBootstrap/card/content.html.twig' %}
+{% use '@MazariniBootstrap/card/footer.html.twig' %}
+
+{% block card_container %}
+    <div class="card">
+        {% block header_container %}
+            {{ parent() }}
+        {% endblock %}
+        {% block content_container %}
+            {{ parent() }}
+        {% endblock %}
+        {% block footer_container %}
+            {{ parent() }}
+        {% endblock %}
+    </div>
+{% endblock %}

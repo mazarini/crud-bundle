@@ -1,0 +1,16 @@
+<table class="table">
+	<tbody>
+		{% block content %}{% endblock content %}
+	</tbody>
+</table>
+{% block edit %}
+	{% include '@MazariniBootstrap/button/link.html.twig' with { 'link': entityLink('Modifier','_edit',data.entity), 'disable': false } %}
+{% endblock edit %}
+{% block delete %}
+	{% if entityLink('Supprimer','_delete',data.entity).url != '#' %}
+		{% include '@MazariniBootstrap/button/toggle.html.twig' with { 'label': 'Supprimer', 'target': 'modalDeleteId' } %}
+	{% endif %}
+{% endblock delete %}
+{% block back %}
+	{% include '@MazariniBootstrap/button/link.html.twig' with { 'link': indexLink('Retour'), 'disable': false} %}
+{% endblock back %}

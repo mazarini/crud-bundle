@@ -1,0 +1,12 @@
+{# templates/step/01-Table.html.twig #}
+
+{% for key,link in items %}
+	{% if link is iterable %}
+		{% include '@MazariniBootstrap/accordion/header.html.twig' with {'accordion': key} %}
+		<div id="{{ key }}" class="list-group collapse" data-parent="#{{ accordion }}">
+			{% embed '@MazariniBootstrap/accordion/items.html.twig' with {'items': link, 'accordion': key} only %}{% endembed %}
+		</div>
+	{% else %}
+		{% include '@MazariniBootstrap/accordion/item.html.twig' %}
+	{% endif %}
+{% endfor %}

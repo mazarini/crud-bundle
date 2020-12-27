@@ -1,0 +1,11 @@
+{% extends '@MazariniTest/step/layout.html.twig' %}
+
+{% block content %}
+	<div class="row">
+		{% embed '@MazariniBootstrap/tool/iterative.html.twig' with {'items': php.extensions} %}
+			{% block item_container %}
+				<div class="col-4">{{ item }}</div>
+			{% endblock item_container %}
+		{% endembed %}
+	</div>
+{% endblock %}

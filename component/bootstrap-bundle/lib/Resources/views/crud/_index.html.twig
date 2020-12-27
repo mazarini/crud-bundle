@@ -1,0 +1,11 @@
+{% use '@MazariniBootstrap/index/data.html.twig' %}
+{% use '@MazariniBootstrap/pagination/adapt.html.twig' %}
+
+<table class="table">
+	{% block page_data %}
+		{{ parent() }}
+	{% endblock page_data %}
+</table>
+{% block adapt_container %}
+	{{ parent() }}
+{% endblock adapt_container %}

@@ -1,0 +1,12 @@
+{# lib/Resources/views/modal/centered.html.twig #}
+
+{% use '@MazariniBootstrap/modal/body.html.twig' %}
+
+{% set modal_id = modal_id|default('modalId') %}
+<div class="modal fade" id="{{ modal_id }}" role="dialog" tabindex="-1">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
+        {% block body_container %}
+            {{ parent() }}
+        {% endblock body_container %}
+    </div>
+</div>

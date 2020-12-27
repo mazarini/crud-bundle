@@ -1,0 +1,27 @@
+{% extends '@MazariniTest/step/layout.html.twig' %}
+
+{% block content %}
+	{{ dump(currentPagination) }}
+	<table class="table">
+		<tr>
+			<th>current page</th>
+			<td>{{ currentPagination.currentPage }}/{{ currentPagination.lastPage }}</td>
+		</tr>
+		<tr>
+			<th>navigation</th>
+			<td>{{ currentPagination.hasPreviousPage ? 1 : 'X' }}
+				&lArr;
+				{{ currentPagination.currentPage }}
+				&rArr;
+				{{ currentPagination.hasNextPage ? currentPagination.lastPage : 'X' }}</td>
+		</tr>
+		<tr>
+			<th>result count</th>
+			<td>{{ currentPagination.count }}/{{ currentPagination.totalCount }}</td>
+		</tr>
+		<tr>
+			<th>Entities</th>
+			<td>{{ currentPagination.count > 0 ? 'id ' ~ currentPagination.entities[0].id ~ ' to ' ~ currentPagination.entities[currentPagination.count - 1].id : 'none' }}</td>
+		</tr>
+	</table>
+{% endblock %}

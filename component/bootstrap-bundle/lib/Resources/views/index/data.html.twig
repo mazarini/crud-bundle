@@ -1,0 +1,52 @@
+{% block page_data %}
+	{% block page_header_container %}
+		<thead>
+			<tr>
+				{% block page_header %}{% endblock page_header %}
+			</tr>
+		</thead>
+	{% endblock %}
+	{% block page_body_container %}
+		<tbody>
+			{% block page_body %}
+				{% for entity in data.entities %}
+					{% block page_row_container %}
+						<tr>
+							{% block page_row %}{% endblock page_row %}
+							{% block button_container %}
+								<td>
+									{% block button %}
+										{% include '@MazariniBootstrap/button/link-sm.html.twig' with {'link': entityLink('Afficher', '_show', entity)} %}
+									{% endblock button %}
+								</td>
+							{% endblock button_container %}
+						</tr>
+					{% endblock page_row_container %}
+				{% else %}
+					<tr>
+						{% block page_empty_container %}
+							<td colspan="{{ span + 1 }}">
+								{% block page_empty %}
+									No row
+								{% endblock page_empty %}
+							</td>
+						{% endblock page_empty_container %}
+					</tr>
+				{% endfor %}
+			{% endblock page_body %}
+		</tbody>
+	{% endblock page_body_container %}
+	{% block page_footer_container %}
+		{% set link = childLink('Ajouter','_new') %}
+		{% if link.url != '#' %}
+			<tfoot>
+				<tr>
+					{% block page_footer %}
+						<td colspan="{{ span }}"></td>
+						<td>{% include '@MazariniBootstrap/button/link-sm.html.twig' with {'link': link} %}</td>
+					{% endblock page_footer %}
+				</tr>
+			</tfoot>
+		{% endif %}
+	{% endblock page_footer_container %}
+{% endblock page_data %}

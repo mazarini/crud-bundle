@@ -1,0 +1,40 @@
+{% use '@MazariniBootstrap/part/stylesheets.html.twig' %}
+{% use '@MazariniBootstrap/message/messages.html.twig' %}
+{% use '@MazariniBootstrap/part/javascripts.html.twig' %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block head_title %}{% endblock head_title %}
+		</title>
+		{% block stylesheets %}
+			{{ parent() }}
+		{% endblock stylesheets %}
+	</head>
+	<body>
+		{% block static %}{% endblock static %}
+		<div class="container">
+			{% block body_container %}
+				<div class="row">
+					<div class="col-2">
+						{% block first_bar_container %}{% endblock first_bar_container %}
+					</div>
+					<div class="col-10">
+						{% block body %}
+							<h1>
+								{% block title %}{% endblock title %}
+							</h1>
+							{% block messages %}{{ parent() }}{% endblock messages %}
+							{% block content %}{% endblock content %}
+						{% endblock body %}
+					</div>
+				</div>
+			{% endblock body_container %}
+		</div>
+		{% block javascripts %}
+			{{ parent() }}
+		{% endblock javascripts %}
+		{% block modal %}{% endblock modal %}
+	</body>
+</html>

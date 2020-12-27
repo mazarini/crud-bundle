@@ -1,0 +1,16 @@
+{% if data.currentAction == 'show' %}
+	{% include '@MazariniBootstrap/button/link.html.twig' with {'link': indexLink('Retour'), 'disable': false} %}
+	{% include '@MazariniBootstrap/button/link.html.twig' with {'link': entityLink('Modifier','_edit', data.entity), 'disable': false} %}
+	{% if entityLink('.','_delete', data.entity).url != '#' %}
+		{% include '@MazariniBootstrap/button/toggle.html.twig' with { 'label': 'Supprimer', 'target': 'modalDeleteId'} %}
+	{% endif %}
+{% else %}
+	{% if data.entity.isNew %}
+		{% include '@MazariniBootstrap/button/link.html.twig' with { 'link': indexLink('Retour'), 'disable': false } %}
+	{% else %}
+		{% include '@MazariniBootstrap/button/link.html.twig' with { 'link': entityLink('Retour','_show', data.entity), 'disable': false } %}
+	{% endif %}
+	<button class="btn btn-primary" type="submit">Valider</button>
+{% endif %}
+{{ dump(data) }}
+{{ dump(linkExtension) }}

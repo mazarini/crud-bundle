@@ -1,0 +1,36 @@
+{% set modal_id = modal_id|default('modalDeleteId') %}
+<div class="modal fade" id="{{ modal_id }}" role="dialog" tabindex="-1">
+	<div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
+		<div class="modal-content">
+			<div class="modal-body">
+				{% if entityLink('Delete','_delete',data.entity).url == '#' %}
+					{% block content_not_allow %}
+						<p>La suppression n'est pas possible</p>
+					{% endblock content_not_allow %}
+				{% else %}
+					{% block content_confirm %}
+						<p>Etes vous sur de vouloir supprimer cet élément ?</p>
+					{% endblock content_confirm %}
+				{% endif %}
+			</div>
+			<div class="modal-footer">
+				{% if entityLink('Delete','_delete',data.entity).url == '#' %}
+					{% block close %}
+						<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#{{ modal_id }}">Fermer</button>
+					{% endblock close %}
+				{% else %}
+					<form method="post" action="{{ entityLink('Delete','_delete',data.entity).url }}">
+						<input type="hidden" name="_method" value="DELETE">
+						<input type="hidden" name="_token" value="{{ csrf_token('delete' ~ data.entity.id) }}">
+						{% block validate %}
+							<button class="btn btn-primary" type="submit">Confirmer</button>
+						{% endblock validate %}
+						{% block cancel %}
+							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#{{ modal_id }}">Annuler</button>
+						{% endblock cancel %}
+					</form>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,19 @@
+{# lib/Resources/views/modal/body.html.twig #}
+
+{% use '@MazariniBootstrap/modal/header.html.twig' %}
+{% use '@MazariniBootstrap/modal/content.html.twig' %}
+{% use '@MazariniBootstrap/modal/footer.html.twig' %}
+
+{% block body_container %}
+    <div class="modal-content">
+        {% block header_container %}
+            {{ parent() }}
+        {% endblock header_container %}
+        {% block content_container %}
+            {{ parent() }}
+        {% endblock content_container %}
+        {% block footer_container %}
+            {{ parent() }}
+        {% endblock footer_container %}
+    </div>
+{% endblock body_container %}

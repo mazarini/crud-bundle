@@ -20,7 +20,7 @@
 namespace App\Repository;
 
 use App\Entity\Five;
-use Doctrine\Common\Persistence\ManagerRegistry;
+use Doctrine\Persistence\ManagerRegistry;
 use Mazarini\PaginationBundle\Repository\EntityRepositoryAbstract;
 
 /**

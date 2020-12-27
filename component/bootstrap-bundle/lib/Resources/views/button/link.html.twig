@@ -1,0 +1,12 @@
+{# lib/Resources/views/button/base.html.twig #}
+
+{% block button %}
+	{% if (link.url != '#') or not (disable is defined) or disable %}
+		{% set class = class|default(' btn-primary') %}
+		<a href="{{ link.url }}" class="btn{{ class }}{{ link.class }}" tabindex="-1" role="button">
+			{% block label %}
+				{{ link.label }}
+			{% endblock label %}
+		</a>
+	{% endif %}
+{% endblock button %}

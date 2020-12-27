@@ -102,6 +102,9 @@
     "doctrine/reflection": {
         "version": "v1.0.0"
     },
+    "doctrine/sql-formatter": {
+        "version": "1.1.1"
+    },
     "easycorp/easy-log-handler": {
         "version": "1.0",
         "recipe": {
@@ -238,6 +241,9 @@
     "symfony/dependency-injection": {
         "version": "v5.0.2"
     },
+    "symfony/deprecation-contracts": {
+        "version": "v2.2.0"
+    },
     "symfony/doctrine-bridge": {
         "version": "v5.0.2"
     },
@@ -296,6 +302,9 @@
             "src/Controller/.gitignore",
             "src/Kernel.php"
         ]
+    },
+    "symfony/http-client-contracts": {
+        "version": "v2.3.1"
     },
     "symfony/http-foundation": {
         "version": "v5.0.2"
@@ -363,11 +372,17 @@
     "symfony/polyfill-ctype": {
         "version": "v1.13.1"
     },
+    "symfony/polyfill-intl-grapheme": {
+        "version": "v1.20.0"
+    },
     "symfony/polyfill-intl-icu": {
         "version": "v1.13.1"
     },
     "symfony/polyfill-intl-idn": {
         "version": "v1.13.1"
+    },
+    "symfony/polyfill-intl-normalizer": {
+        "version": "v1.20.0"
     },
     "symfony/polyfill-mbstring": {
         "version": "v1.13.1"
@@ -378,11 +393,20 @@
     "symfony/polyfill-php73": {
         "version": "v1.13.1"
     },
+    "symfony/polyfill-php80": {
+        "version": "v1.20.0"
+    },
     "symfony/profiler-pack": {
         "version": "v1.0.4"
     },
     "symfony/property-access": {
         "version": "v5.0.2"
+    },
+    "symfony/property-info": {
+        "version": "v5.2.1"
+    },
+    "symfony/proxy-manager-bridge": {
+        "version": "v5.2.1"
     },
     "symfony/routing": {
         "version": "4.2",
@@ -427,6 +451,9 @@
     },
     "symfony/stopwatch": {
         "version": "v5.0.2"
+    },
+    "symfony/string": {
+        "version": "v5.2.1"
     },
     "symfony/test-pack": {
         "version": "v1.0.6"
@@ -506,8 +533,14 @@
     "twig/extra-bundle": {
         "version": "v3.0.0"
     },
+    "twig/intl-extra": {
+        "version": "v3.1.1"
+    },
     "twig/twig": {
         "version": "v3.0.0"
+    },
+    "webimpress/safe-writer": {
+        "version": "2.1.0"
     },
     "zendframework/zend-code": {
         "version": "3.4.1"

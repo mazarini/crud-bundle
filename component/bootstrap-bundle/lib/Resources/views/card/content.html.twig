@@ -1,0 +1,11 @@
+{# lib/Resources/views/card/content.html.twig #}
+
+{% block content_container %}
+    <div class="card-body">
+        {% block content %}
+            <p class="card-text">
+                {% block text %}{% endblock text %}
+            </p>
+        {% endblock content %}
+    </div>
+{% endblock content_container %}

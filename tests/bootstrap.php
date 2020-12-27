@@ -21,15 +21,4 @@ use Symfony\Component\Dotenv\Dotenv;
 
 require dirname(__DIR__).'/vendor/autoload.php';
 
-$dotEnvMethod = '';
-if (file_exists(dirname(__DIR__).'/config/bootstrap.php')) {
-    require dirname(__DIR__).'/config/bootstrap.php';
-} else {
-    $dotEnvMethod = 'bootEnv';
-}
-if (method_exists(Dotenv::class, $dotEnvMethod)) {
-    (new Dotenv())->$dotEnvMethod(dirname(__DIR__).'/.env');
-} else {
-    $dotEnvMethod = 'loadEnv';
-    (new Dotenv(false))->$dotEnvMethod(dirname(__DIR__).'/.env');
-}
+    (new Dotenv())->loadEnv(dirname(__DIR__).'/.env');

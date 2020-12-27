@@ -1,0 +1,17 @@
+{# lib/Resources/views/table/content.html.twig #}
+
+{% use '@MazariniBootstrap/table/header.html.twig' %}
+{% use '@MazariniBootstrap/table/body.html.twig' %}
+{% use '@MazariniBootstrap/table/footer.html.twig' %}
+
+{% block content_container %}
+    {% block header_container %}
+        {{ parent() }}
+    {% endblock %}
+    {% block body_container %}
+        {{ parent() }}
+    {% endblock %}
+    {% block footer_container %}
+        {{ parent() }}
+    {% endblock %}
+{% endblock content_container %}

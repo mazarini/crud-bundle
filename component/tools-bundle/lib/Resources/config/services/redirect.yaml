@@ -1,0 +1,17 @@
+# Resources/config/services/redirect.yaml
+#
+# Redidect for / and /admin
+# -------------------------
+#
+# Define as parameters :
+#     - home_page to redirect '/'
+#     - home_admin to redirect '/admin'
+#
+# Import into config/services.yaml
+#
+services:
+    mazarini_toolsBundle.HomepageSubscriber:
+        class: Mazarini\ToolsBundle\EventSubscriber\HomepageSubscriber
+        arguments:
+            $homePage: '%home_page%'
+            $homeAdmin: '%home_admin%'

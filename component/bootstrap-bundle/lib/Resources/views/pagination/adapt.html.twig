@@ -1,0 +1,16 @@
+{# lib/Resources/views/pagination/adapt.html.twig #}
+
+{% use '@MazariniBootstrap/pagination/nav.html.twig' %}
+{% use '@MazariniBootstrap/pagination/num.html.twig' %}
+
+{% block adapt_container %}
+	{% if data.pagination.lastPage < 6 %}
+		{% block num_container %}
+			{{ parent() }}
+		{% endblock num_container %}
+	{% else %}
+		{% block nav_container %}
+			{{ parent() }}
+		{% endblock nav_container %}
+	{% endif %}
+{% endblock adapt_container %}

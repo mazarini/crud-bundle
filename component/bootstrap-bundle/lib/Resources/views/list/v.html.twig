@@ -1,0 +1,7 @@
+<div class="list-group">
+	{% embed '@MazariniBootstrap/tool/iterative.html.twig' with {'items': list} only %}
+		{% block item_container %}
+			{% include '@MazariniBootstrap/list/link.html.twig' with {'link': item} only %}
+		{% endblock item_container %}
+	{% endembed %}
+</div>

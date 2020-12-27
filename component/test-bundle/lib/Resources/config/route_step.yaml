@@ -1,0 +1,3 @@
+controllers:
+    resource: '@MazariniTestBundle/Controller/StepController.php'
+    type: annotation

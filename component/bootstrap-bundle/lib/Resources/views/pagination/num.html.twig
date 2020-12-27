@@ -1,0 +1,11 @@
+{# lib/Resources/views/pagination/number.html.twig #}
+
+{% block num_container %}
+	<nav>
+		<ul class="pagination justify-content-center">
+			{% for number in 1..data.pagination.lastPage %}
+				{% include '@MazariniBootstrap/pagination/item.html.twig' with {'link': pageLink(number,number) } only %}
+			{% endfor %}
+		</ul>
+	</nav>
+{% endblock num_container %}

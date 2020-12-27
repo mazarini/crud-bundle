@@ -1,0 +1,11 @@
+{# lib/Resources/views/card/header.html.twig #}
+
+{% block header_container %}
+    <div class="card-header">
+        {% block header %}
+            <h5 class="card-title">
+                {% block title %}{% endblock %}
+            </h5>
+        {% endblock %}
+    </div>
+{% endblock %}

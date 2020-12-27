@@ -1,0 +1,6 @@
+{% extends '@MazariniTest/step/layout.html.twig' %}
+
+{% block content %}
+	{{ dump(tree) }}
+	{% include '@MazariniBootstrap/tree.html.twig' with {'items': tree} only %}
+{% endblock %}

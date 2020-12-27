@@ -1,0 +1,23 @@
+{# lib/Resources/views/pagination/nav.html.twig #}
+
+{% block nav_container %}
+    <nav>
+        <ul class="pagination justify-content-center">
+            {% if data.pagination.hasPreviousPage %}
+                {% include '@MazariniBootstrap/pagination/first.html.twig' with {'link': pageLink(1, 1)} only %}
+                {% include '@MazariniBootstrap/pagination/prev.html.twig' with {'link': pageLink(data.pagination.previousPage)} only %}
+            {% else %}
+                {% include '@MazariniBootstrap/pagination/first.html.twig' with {'link': disableLink('1')} only %}
+                {% include '@MazariniBootstrap/pagination/prev.html.twig' with {'link': disableLink('')} only %}
+            {% endif %}
+            {% include '@MazariniBootstrap/pagination/item.html.twig' with {'link': pageLink(data.pagination.currentPage, data.pagination.currentPage)} only %}
+            {% if data.pagination.hasNextPage %}
+                {% include '@MazariniBootstrap/pagination/next.html.twig' with {'link': pageLink(data.pagination.nextPage)} only %}
+                {% include '@MazariniBootstrap/pagination/last.html.twig' with {'link': pageLink(data.pagination.lastPage, data.pagination.lastPage)} only %}
+            {% else %}
+                {% include '@MazariniBootstrap/pagination/next.html.twig' with {'link': disableLink('')} only %}
+                {% include '@MazariniBootstrap/pagination/last.html.twig' with {'link': disableLink(data.pagination.lastPage)} only %}
+            {% endif %}
+        </ul>
+    </nav>
+{% endblock nav_container %}

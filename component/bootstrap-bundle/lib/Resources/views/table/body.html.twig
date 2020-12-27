@@ -1,0 +1,19 @@
+{# lib/Resources/views/table/body.html.twig #}
+
+{% block body_container %}
+	<tbody>
+		{% block body %}
+			{% for item in items %}
+				{% block row_container %}
+					<tr>
+						{% block row %}{% endblock row %}
+					</tr>
+				{% endblock row_container %}
+			{% else %}
+				<tr>
+					{% block empty %}{% endblock empty %}
+				</tr>
+			{% endfor %}
+		{% endblock body %}
+	</tbody>
+{% endblock body_container %}

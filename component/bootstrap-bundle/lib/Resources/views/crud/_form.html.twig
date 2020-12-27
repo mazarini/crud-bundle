@@ -1,0 +1,19 @@
+{{ form_start(data.formView) }}
+
+{% block widget %}
+	{{ form_widget(data.formView) }}
+{% endblock widget %}
+
+{% block cancel %}
+	{% if data.entity.isNew %}
+		{% include '@MazariniBootstrap/button/link.html.twig' with { 'link': indexLink('Annuler') } %}
+	{% else %}
+		{% include '@MazariniBootstrap/button/link.html.twig' with { 'link': entityLink('Annuler','_show',data.entity), 'disable': false } %}
+	{% endif %}
+{% endblock cancel %}
+
+{% block validate %}
+	<button class="btn btn-primary" type="submit">Valider</button>
+{% endblock validate %}
+
+{{ form_end(data.formView) }}

@@ -1,0 +1,8 @@
+{# lib/Resources/views/button/close.html.twig #}
+
+{% block button_close %}
+	{% set dismiss = dismiss|default('modal') %}
+	<button type="button" class="close" data-dismiss="{{ dismiss }}">
+		<span>&times;</span>
+	</button>
+{% endblock button_close %}

@@ -1,0 +1,17 @@
+{# templates/step/01-Table.html.twig #}
+
+{% for key,item in items %}
+	{% if item is iterable %}
+		<a class="list-group-item list-group-item-action list-group-item-light{{ item.class }}" data-toggle="collapse" data-target="#{{ key }}">
+			{{ item.label }}
+			&dArr;
+		</a>
+		<div id="{{ key }}" class="list-group collapse{% if item.class == ' active' %} show{% endif %}" data-parent="#{{ accordion }}">
+			{% embed '@MazariniBootstrap/menu.html.twig' with {'items': item, 'accordion': key} only %}{% endembed %}
+		</div>
+	{% else %}
+		<a href="{{ item.url }}" class="list-group-item list-group-item-action list-group-item-light{{ item.class }}">
+			{{ item.label }}
+		</a>
+	{% endif %}
+{% endfor %}

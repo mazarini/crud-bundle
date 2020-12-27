@@ -1,0 +1,7 @@
+{# lib/Resources/views/list/link.html.twig #}
+
+<a href="{{ link.url }}" class="list-group-item list-group-item-action{{ link.class }}">
+	{% block label %}
+		{{ link.label }}
+	{% endblock label %}
+</a>

@@ -1,0 +1,34 @@
+{% extends '@MazariniTest/step/layout.html.twig' %}
+
+{% block content %}
+	{{ dump(currentEntities) }}
+	<table class="table">
+
+		{% embed '@MazariniBootstrap/tool/iterative.html.twig' with {'items': currentEntities} %}
+			{% block header_container %}
+				<tr>
+					<th>
+						Key
+					</th>
+					<th>
+						Id
+					</th>
+					<th>
+						Col 1
+					</th>
+					<th>
+						Col 9
+					</th>
+				</tr>
+			{% endblock header_container %}
+			{% block item_container %}
+				<tr>
+					<td>{{ key }}</td>
+					<td>{{ item.id }}</td>
+					<td>{{ item.col1 }}</td>
+					<td>{{ item.col9 }}</td>
+				</tr>
+			{% endblock item_container %}
+		{% endembed %}
+	</table>
+{% endblock %}

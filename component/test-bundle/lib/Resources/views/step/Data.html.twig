@@ -1,0 +1,30 @@
+{% extends '@MazariniTest/step/layout.html.twig' %}
+
+{% block content %}
+	{{ dump(currentData) }}
+	<table class="table">
+		<tr>
+			<td>Current action :</td>
+			<td>{{ currentData.CurrentAction }}</td>
+		</tr>
+		<tr>
+			<td>Entity :</td>
+			<td>{{ currentData.isSetEntity ? 'Yes' : 'No' }}</td>
+		</tr>
+		<tr>
+			<td>Form :</td>
+			<td>{{ currentData.isSetFormView ? 'Yes' : 'No' }}</td>
+		</tr>
+		<tr>
+			<td>Pagination :</td>
+			<td>{{ currentData.isSetEntities ? currentData.pagination.currentPage ~ ' / ' ~ currentData.pagination.LastPage : 'No' }}</td>
+		</tr>
+		<tr>
+			<td>Entities :</td>
+			<td>{{ currentData.isSetEntities ? currentData.entities.count ~ ' entities / ' ~ currentData.pagination.totalCount : 'No' }}</td>
+		</tr>
+	</table>
+	{% if object|default(false) %}
+		{{ dump(object) }}
+	{% endif %}
+{% endblock %}
